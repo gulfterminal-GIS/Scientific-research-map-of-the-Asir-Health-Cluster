@@ -1,0 +1,239 @@
+/* Updated CSS */
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#viewDiv {
+    padding: 0 !important;
+    margin: 0;
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#sidePanel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: calc(100% - 40px);
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 99;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#sidePanel.collapsed {
+    transform: translateX(-330px);
+}
+
+/* No need for .expanded class anymore */
+#viewDiv.expanded {
+    padding-left: 0 !important;
+}
+
+/* Fix search widget styling */
+.esri-search {
+    position: relative;
+    width: 100%;
+}
+
+.esri-search__container {
+    position: relative;
+    z-index: 1000;
+}
+
+.esri-search__input-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.esri-search__suggestions-menu {
+    position: absolute !important;
+    top: 100% !important; /* Position below the search input */
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1001 !important; /* Highest z-index */
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.esri-search__suggestions-list {
+    position: relative;
+    z-index: 1001;
+}
+
+.esri-menu__list-item {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Style the search container */
+#searchDiv {
+    position: relative;
+    z-index: 1000; /* Higher z-index */
+    width: 100%;
+    min-height: 40px;
+}
+
+#toggleButton {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+#toggleButton:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+#sidePanel.collapsed .toggle-icon {
+    transform: rotate(180deg);
+}
+
+#widgetContainer {
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    z-index: 99;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 1rem;
+}
+.material-icons-round {
+    font-size: 24px;
+}
+
+#viewDiv {
+    padding-left: 350px;
+    transition: padding-left 0.3s ease-in-out;
+}
+
+#viewDiv.expanded {
+    padding-left: 30px;
+}
+
+/* Custom scrollbar */
+#widgetContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+#widgetContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#widgetContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#widgetContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* Ensure all popup and dropdown menus appear above the sidebar */
+.esri-popup,
+.esri-popup__main-container,
+.esri-menu,
+.esri-component.esri-layer-list {
+    z-index: 101 !important;
+}
+
+/* Additional styles to ensure proper stacking */
+.esri-view-surface {
+    z-index: 0;
+}
+
+.esri-ui {
+    z-index: 98;
+}
+
+/* Ensure proper stacking for all widgets */
+.esri-component {
+    z-index: 99;
+}
+
+/* Style adjustments for layer list */
+.esri-layer-list {
+    background: transparent;
+}
+
+.esri-layer-list__item {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* Custom scrollbar for the widget container */
+#widgetContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#widgetContainer::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 3px;
+}
+
+#widgetContainer::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+#widgetContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.3);
+}
