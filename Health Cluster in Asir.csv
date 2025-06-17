@@ -1,275 +1,275 @@
-directorate_name,facility_cd,facility_name,facilitytype,latitude,longitude,Location,facility_status,Sector,working hours,Added in Summer Plan
-Asir Health Cluster,3333, sueban,PHC,18.86992,41.93211,"18.86992,41.93211",Active,بارق,8,No
-Asir Health Cluster,3754,A'abal,PHC,18.53741,42.42025,"18.53741,42.42025",Active,بللحمر,8,No
-Asir Health Cluster,1568,A'aksah,PHC,19.15638,42.14104,"19.15638,42.14104",Active,النماص,8,No
-Asir Health Cluster,1570,Abass,PHC,19.29864,41.96172,"19.29864,41.96172",Active,المجاردة,8,No
-Asir Health Cluster,1575,A'elo Mirbah,PHC,18.0905236,42.3737097,"18.0905236,42.3737097",Active,أبها,8,No
-Bisha Health Affairs,1572,afra,PHC,19.696759,42.024439,"19.696759,42.024439",Active,العلاية,16/5,No
-Asir Health Cluster,1578,Ain Al-Luy,PHC,18.04601,43.01781,"18.04601,43.01781",Active,سراة عبيدة,8,No
-Bisha Health Affairs,1579,Ain Qahtan,PHC,18.93077,44.06199,"18.93077,44.06199",Active,الأمواه,8,No
-Bisha Health Affairs,2041,Airport District,PHC,20.00044,42.61543,"20.00044,42.61543",Active,المدينة,8,No
-Asir Health Cluster,1556,Airport North,PHC,18.31473,42.74687,"18.31473,42.74687",Active,خميس مشيط,8,No
-Asir Health Cluster,4108,Akhlal,PHC,18.208814,42.019102,"18.208814,42.019102",Active,محايل,8,No
-Asir Health Cluster,2565,Al Brayd,PHC,18.17952,42.84373,"18.17952,42.84373",Active,أحد رفيدة,8,No
-Bisha Health Affairs,1581,AL Ghamis Alwahlan,PHC,18.5238,43.64198,"18.5238,43.64198",Active,الأمواه,8,No
-Asir Health Cluster,2577,Al Ghelan,PHC,19.0881567,41.7860082,"19.0881567,41.7860082",Active,المجاردة,8,No
-Bisha Health Affairs,2491,Al- Hamdah,PHC,19.5285178,43.524034,"19.5285178,43.524034",Active,تثليث,16/5,No
-Asir Health Cluster,2569,Al Hulami,PHC,18.03098,42.81848,"18.03098,42.81848",Active,أحد رفيدة,16/5,Yes
-Asir Health Cluster,2572,Al Khalf,PHC,17.9604142,43.1286335,"17.9604142,43.1286335",Active,سراة عبيدة,8,No
-Asir Health Cluster,2570,Al Khatrish,PHC,18.43839,41.90953,"18.43839,41.90953",Active,محايل,8,No
-Asir Health Cluster,636,Al- Malaha,PHC,18.3647184,42.4671149,"18.3647184,42.4671149",Active,أبها,8,No
-Asir Health Cluster,1595,Al masgi,PHC,18.05441,42.73649,"18.05441,42.73649",Active,أبها,16/5,No
-Bisha Health Affairs,4481,Al Matla,PHC,19.729917,42.196222,"19.729917,42.196222",Active,العلاية,8,No
-Asir Health Cluster,2578,Al Muftah,PHC,17.65906,43.32389,"17.65906,43.32389",Active,ظهران الجنوب,24/7,No
-Bisha Health Affairs,2576,Al Salamah Al Zarya,PHC,19.4168668,41.994735,"19.4168668,41.994735",Active,العلاية,8,No
-Asir Health Cluster,638,Al Saqa,PHC,18.2344,42.41033,"18.2344,42.41033",Active,أبها,16/5,No
-Asir Health Cluster,2574,Al Sarhan,PHC,18.12674,42.68557,"18.12674,42.68557",Active,أبها,8,No
-Asir Health Cluster,2575,Al Sari',PHC,18.173427,42.628706,"18.173427,42.628706",Active,أبها,16/5,Yes
-Asir Health Cluster,637,Al Tanmia,PHC,18.00147,42.75239,"18.00147,42.75239",Active,أبها,8,No
-Asir Health Cluster,1484,Al Yazid,PHC,18.09778,42.67968,"18.09778,42.67968",Active,أبها,8,No
-Asir Health Cluster,2519,Al-A'ardayn,PHC,17.96546,43.20679,"17.96546,43.20679",Active,سراة عبيدة,8,No
-Asir Health Cluster,2524,Al-A'asran,PHC,18.048674,43.062908,"18.048674,43.062908",Active,سراة عبيدة,8,No
-Asir Health Cluster,2523,Al-A'aziziah,PHC,18.20875,42.49762,"18.20875,42.49762",Active,أبها,16/5,Yes
-Bisha Health Affairs,3439,Alaetf 2,PHC,20.13866,42.6318,"20.13866,42.6318",Active,الشمالي,8,No
-Bisha Health Affairs,1576,Al-Amair,PHC,18.95737,43.62055,"18.95737,43.62055",Active,الأمواه,24/7,No
-Asir Health Cluster,2526,Alammarh,PHC,18.38159,42.64721,"18.38159,42.64721",Active,خميس مشيط,8,No
-Asir Health Cluster,2521,Al-Areen (Abha),PHC,18.2408457,42.5305706,"18.2408457,42.5305706",Active,أبها,8,No
-Asir Health Cluster,4109,Al-Areen (Qahtan),PHC,18.5607506,43.3855462,"18.5607506,43.3855462",Active,المضة,16/5,No
-Asir Health Cluster,2522,Al-Azizah,PHC,18.20755,42.42947,"18.20755,42.42947",Active,أبها,8,No
-Bisha Health Affairs,2064,Al-Baheem,PHC,19.69994,42.36231,"19.69994,42.36231",Active,الجنوبي,8,No
-Bisha Health Affairs,2475,Al-Basha'ar,PHC,19.7493162,41.9148696,"19.7493162,41.9148696",Active,البشاير,16/5,No
-Asir Health Cluster,2473,Al-Bataelah,PHC,18.1934673,42.2697722,"18.1934673,42.2697722",Active,رجال ألمع,8,No
-Asir Health Cluster,3366,Albatnah,PHC,18.863174,42.638692,"18.863174,42.638692",Active,وادي بن هشبل,8,No
-Asir Health Cluster,2474,Al-Bayrak,PHC,18.22973,41.53255,"18.22973,41.53255",Active,البرك,8,No
-Bisha Health Affairs,2476,Al-Bazazah,PHC,19.62371,41.97418,"19.62371,41.97418",Active,العلاية,8,No
-Asir Health Cluster,2477,Al-Buka'a,PHC,17.7179273,43.2688844,"17.7179273,43.2688844",Active,ظهران الجنوب,8,No
-Bisha Health Affairs,2042,Al-Dajw,PHC,20.1028283,42.660005,"20.1028283,42.660005",Active,المدينة,8,No
-Asir Health Cluster,2511,Al-Dhars,PHC,18.5422286,42.0841347,"18.5422286,42.0841347",Active,محايل,8,No
-Asir Health Cluster,1518,Al-Dhobbat District,PHC,18.29326,42.72567,"18.29326,42.72567",Active,خميس مشيط,16/5,Yes
-Asir Health Cluster,2520,Al-Erqeen,PHC,18.3352582,43.2766056,"18.3352582,43.2766056",Active,سراة عبيدة,8,No
-Bisha Health Affairs,2534,Al-Fara,PHC,18.58046,43.91029,"18.58046,43.91029",Active,الأمواه,8,No
-Asir Health Cluster,2539,Al-Fara'a Health Center,PHC,18.07178,42.69689,"18.07178,42.69689",Active,أبها,8,No
-Asir Health Cluster,2535,Al-Fara'ayn,PHC,18.15296,42.96215,"18.15296,42.96215",Active,أحد رفيدة,8,No
-Asir Health Cluster,3694,Al-Farshah South,PHC,17.673499,43.171767,"17.673499,43.171767",Active,الفرشة,8,No
-Asir Health Cluster,2536,Al-Fayd,PHC,18.3604214,41.7213249,"18.3604214,41.7213249",Active,البرك,8,No
-Bisha Health Affairs,3568,Alfoaha,PHC,19.76958,41.96542,"19.76958,41.96542",Active,البشاير,8,No
-Asir Health Cluster,2533,Al-Furshah,PHC,17.74876,43.15475,"17.74876,43.15475",Active,الفرشة,8,No
-Bisha Health Affairs,2049,Al-Ghafrat,PHC,19.785237,42.411298,"19.785237,42.411298",Active,الجنوبي,8,No
-Asir Health Cluster,2531,Al-Ghayna'a,PHC,18.02742,42.41477,"18.02742,42.41477",Active,أبها,8,No
-Asir Health Cluster,2530,Al-Gheel,PHC,17.73899,43.52682,"17.73899,43.52682",Active,ظهران الجنوب,8,No
-Asir Health Cluster,2529,Al-Ghul,PHC,17.74349,43.34104,"17.74349,43.34104",Active,الحرجة,8,No
-Asir Health Cluster,2527,Al-Ghurs,PHC,18.4962149,43.3599293,"18.4962149,43.3599293",Active,المضة,8,No
-Asir Health Cluster,2483,Al-Hajir,PHC,17.5007814,43.6199498,"17.5007814,43.6199498",Active,ظهران الجنوب,8,No
-Asir Health Cluster,2560,Al-Hamijah,PHC,18.30918,42.72146,"18.30918,42.72146",Active,خميس مشيط,8,No
-Asir Health Cluster,2485,Al-Harjah,PHC,17.92403,43.36467,"17.92403,43.36467",Active,الحرجة,8,No
-Asir Health Cluster,2492,Alhay al jadeed,PHC,18.29328,42.75914,"18.29328,42.75914",Active,خميس مشيط,8,No
-Asir Health Cluster,2493,Al-Haymah,PHC,18.7240151,42.5690853,"18.7240151,42.5690853",Active,وادي بن هشبل,8,No
-Bisha Health Affairs,2054,Al-Hazimi,PHC,19.8703199,42.4934122,"19.8703199,42.4934122",Active,الجنوبي,16/5,No
-Asir Health Cluster,2486,Al-Heradah,PHC,17.7845642,41.9402111,"17.7845642,41.9402111",Active,القحمة,8,No
-Asir Health Cluster,3653,Al-Herar and Zlalh,PHC,18.2424022,42.7647024,"18.2424022,42.7647024",Active,خميس مشيط,8,No
-Asir Health Cluster,2484,Al-Hubail,PHC,18.08995,42.22737,"18.08995,42.22737",Active,رجال ألمع,24/7,No
-Bisha Health Affairs,2070,Al-Hufairah,PHC,19.44796,42.84464,"19.44796,42.84464",Active,المدينة,8,No
-Bisha Health Affairs,3413,Al-Humayd,PHC,19.5970401,41.9573665,"19.5970401,41.9573665",Active,العلاية,8,No
-Bisha Health Affairs,2051,Al-Hyfah,PHC,19.86542,42.53551,"19.86542,42.53551",Active,الجنوبي,8,No
-Asir Health Cluster,2472,Al-ihmal,PHC,18.2714643,42.0633965,"18.2714643,42.0633965",Active,رجال ألمع,8,No
-Bisha Health Affairs,2056,Al-Ja'abah,PHC,20.32998,42.11174,"20.32998,42.11174",Active,الغربي,16/5,No
-Asir Health Cluster,2481,Al-Jamah,PHC,18.478968,41.7111432,"18.478968,41.7111432",Active,البرك,8,No
-Asir Health Cluster,2482,Al-Jawa,PHC,17.906018,43.2381964,"17.906018,43.2381964",Active,سراة عبيدة,8,No
-Bisha Health Affairs,2058,Al-Jaynanah,PHC,20.27287,42.80218,"20.27287,42.80218",Active,الشمالي,8,No
-Asir Health Cluster,2480,Al-Jazerah and Al-Jarfayn',PHC,19.0640243,42.9937613,"19.0640243,42.9937613",Active,وادي بن هشبل,8,No
-Asir Health Cluster,2479,Al-Jorf,PHC,18.280141,42.2427981,"18.280141,42.2427981",Active,رجال ألمع,16/7,No
-Asir Health Cluster,3385,Al-Juhayfah,PHC,17.93035,42.7117,"17.93035,42.7117",Active,أبها,8,No
-Asir Health Cluster,2538,Al-Kamhah,PHC,18.00201,41.6797,"18.00201,41.6797",Active,القحمة,8,No
-Asir Health Cluster,3430,Al-Khangah,PHC,18.3112015,43.5185337,"18.3112015,43.5185337",Active,المضة,8,No
-Asir Health Cluster,2540,Al-Kurayha,PHC,18.8691936,42.013834,"18.8691936,42.013834",Active,بارق,8,No
-Asir Health Cluster,2550,Al-Madah,PHC,18.8363992,43.2437646,"18.8363992,43.2437646",Active,المضة,8,No
-Asir Health Cluster,2544,Al-Majardah,PHC,19.1111878,41.9236997,"19.1111878,41.9236997",Active,المجاردة,16/5,No
-Asir Health Cluster,4114,Al-Majardah East,PHC,19.1304712,41.9353258,"19.1304712,41.9353258",Active,المجاردة,8,No
-Asir Health Cluster,3592,Al-Majma'a-Al-A'akl-Mafragh Al-sayal,PHC,18.138285,42.097611,"18.138285,42.097611",Active,رجال ألمع,16/5,No
-Asir Health Cluster,2551,Al-Maka'ad,PHC,18.50666,42.10617,"18.50666,42.10617",Active,محايل,8,No
-Asir Health Cluster,2553,Al-Manhal,PHC,18.207302,42.51485,"18.207302,42.51485",Active,أبها,16/7,No
-Asir Health Cluster,2552,Al-Manjah,PHC,18.2116581,41.8942201,"18.2116581,41.8942201",Active,محايل,8,No
-Asir Health Cluster,3632,Al-Mansak,PHC,18.2075757,42.5617245,"18.2075757,42.5617245",Active,أبها,24/7,No
-Asir Health Cluster,2549,Al-Masna'ah,PHC,18.28896,42.46193,"18.28896,42.46193",Active,أبها,8,No
-Asir Health Cluster,2543,Al-Maween,PHC,18.65482,42.43674,"18.65482,42.43674",Active,بللحمر,8,No
-Asir Health Cluster,3594,Al-Muhalah,PHC,18.28442,42.5933,"18.28442,42.5933",Active,أبها,8,No
-Bisha Health Affairs,2061,Al-Muhalah,PHC,19.46231,42.3493,"19.46231,42.3493",Active,الجنوبي,8,No
-Bisha Health Affairs,2039,Al-Mukhattat 1,PHC,20.02288,42.61828,"20.02288,42.61828",Active,المدينة,8,No
-Bisha Health Affairs,2057,Al-Mukhattat 2,PHC,20.01441,42.61756,"20.01441,42.61756",Active,المدينة,8,No
-Asir Health Cluster,2548,Al-Muslimah,PHC,18.96327,41.98115,"18.96327,41.98115",Active,بارق,8,No
-Asir Health Cluster,1519,Al-Muwazafeen District,PHC,18.23608,42.60046,"18.23608,42.60046",Active,أبها,24/7,No
-Asir Health Cluster,2555,Al-Na'adaa,PHC,18.3000149,43.7847518,"18.3000149,43.7847518",Active,الحرجة,8,No
-Asir Health Cluster,2554,Al-Najdayn,PHC,18.3570204,42.1241425,"18.3570204,42.1241425",Active,رجال ألمع,8,No
-Asir Health Cluster,2556,Al-Namas,PHC,19.12868,42.13456,"19.12868,42.13456",Active,النماص,8,No
-Bisha Health Affairs,2044,Al-Naqeerah,PHC,20.2476938,42.7059415,"20.2476938,42.7059415",Active,الشمالي,16/5,No
-Asir Health Cluster,2557,Al-Numays,PHC,18.2133211,42.5277972,"18.2133211,42.5277972",Active,أبها,8,No
-Asir Health Cluster,4111,Al-Qa'aah,PHC,18.493219,43.077432,"18.493219,43.077432",Active,خميس مشيط,8,No
-Asir Health Cluster,2537,Al-Qabil,PHC,18.21856,42.4934,"18.21856,42.4934",Active,أبها,8,No
-Asir Health Cluster,2541,Al-Qalfa'a,PHC,18.4061627,42.3467738,"18.4061627,42.3467738",Active,أبها,8,No
-Bisha Health Affairs,2050,Al-Qwba'a,PHC,19.54493,42.27709,"19.54493,42.27709",Active,الجنوبي,8,No
-Asir Health Cluster,2497,Al-Rabua'ah,PHC,17.5845001,43.3212624,"17.5845001,43.3212624",Active,ظهران الجنوب,24/7,No
-Bisha Health Affairs,3461,ALRAHWA,PHC,18.74029,43.86787,"18.74029,43.86787",Active,الأمواه,8,No
-Asir Health Cluster,3453,Al-Rasras,PHC,18.26057,42.77318,"18.26057,42.77318",Active,خميس مشيط,24/7,No
-Bisha Health Affairs,2072,Al-Rass,PHC,19.46667,42.52512,"19.46667,42.52512",Active,الجنوبي,8,No
-Asir Health Cluster,2499,Al-Rawnah,PHC,18.22696,42.80267,"18.22696,42.80267",Active,أحد رفيدة,8,No
-Asir Health Cluster,2498,Al-Refqah and Al-Malahah,PHC,18.01121,43.53095,"18.01121,43.53095",Active,الحرجة,8,No
-Asir Health Cluster,2501,Al-Resh,PHC,18.62799,42.09376,"18.62799,42.09376",Active,محايل,8,No
-Bisha Health Affairs,2060,Al-Ruqita'a,PHC,20.159319,42.663963,"20.159319,42.663963",Active,الشمالي,8,No
-Asir Health Cluster,2504,Al-Salim,PHC,18.8067056,41.6597092,"18.8067056,41.6597092",Active,بارق,8,No
-Asir Health Cluster,2509,Al-Samkhiah,PHC,18.08882,42.82505,"18.08882,42.82505",Active,أحد رفيدة,8,No
-Bisha Health Affairs,2059,Al-Sanyah,PHC,20.02795,42.31029,"20.02795,42.31029",Active,الغربي,16/5,Yes
-Asir Health Cluster,2510,Al-Sawalahah,PHC,18.59364,41.41294,"18.59364,41.41294",Active,محايل,8,No
-Asir Health Cluster,2505,Al-Sawdah,PHC,18.26342,42.39076,"18.26342,42.39076",Active,أبها,8,No
-Bisha Health Affairs,2508,Al-Sbekhah,PHC,19.1032427,43.3124756,"19.1032427,43.3124756",Active,تثليث,8,No
-Asir Health Cluster,2506,Al-Shabeen,PHC,18.2269872,42.2821426,"18.2269872,42.2821426",Active,رجال ألمع,8,No
-Bisha Health Affairs,2055,Al-Shadakhah,PHC,20.03368,42.5879,"20.03368,42.5879",Active,المدينة,8,No
-Asir Health Cluster,3509,Al-Shalfa'a,PHC,18.386559,42.502022,"18.386559,42.502022",Active,أبها,8,No
-Bisha Health Affairs,2045,Al-Shaqyqah,PHC,20.27849,42.7649,"20.27849,42.7649",Active,الشمالي,8,No
-Asir Health Cluster,3497,Al-Sharfiayh,PHC,18.30481,42.7546,"18.30481,42.7546",Active,خميس مشيط,8,No
-Asir Health Cluster,2507,Al-Shayq,PHC,18.69515,42.87648,"18.69515,42.87648",Active,وادي بن هشبل,8,No
-Asir Health Cluster,635,Al-Syna'ayah,PHC,18.3122506,42.6965618,"18.3122506,42.6965618",Active,خميس مشيط,24/7,No
-Asir Health Cluster,2512,Al-Tahahyeen,PHC,18.76113,41.87292,"18.76113,41.87292",Active,محايل,8,No
-Asir Health Cluster,2513,Al-Talalya'a,PHC,19.0558611,41.7861128,"19.0558611,41.7861128",Active,المجاردة,8,No
-Asir Health Cluster,2514,Al-Talhah Healthcare Center,PHC,17.75886,43.5061,"17.75886,43.5061",Active,ظهران الجنوب,8,No
-Bisha Health Affairs,1467,Al-Ufairiah,PHC,20.58124,42.14816,"20.58124,42.14816",Active,الغربي,8,No
-Asir Health Cluster,2561,Al-Wadiyin,PHC,18.07627,42.80329,"18.07627,42.80329",Active,أحد رفيدة,16/5,No
-Asir Health Cluster,2562,Al-Wahabah,PHC,18.176292,43.09149,"18.176292,43.09149",Active,سراة عبيدة,8,No
-Asir Health Cluster,2515,Al-Zaharah,PHC,19.04542,42.13117,"19.04542,42.13117",Active,النماص,8,No
-Bisha Health Affairs,2502,Al-Zarq,PHC,19.45543,43.82254,"19.45543,43.82254",Active,تثليث,8,No
-Asir Health Cluster,3783,Amir Abdel Rahman (Ahead Rufaida),PHC,18.17525,42.83127,"18.17525,42.83127",Active,أحد رفيدة,8,No
-Asir Health Cluster,4117,A'rak Balahna,PHC,18.19783,42.82144,"18.19783,42.82144",Active,أحد رفيدة,24/7,No
-Asir Health Cluster,3757,Atoud Al-Amayir,PHC,18.228182,42.715286,"18.228182,42.715286",Active,خميس مشيط,8,No
-Asir Health Cluster,639,Bahet Rabeia,PHC,18.341836,42.328872,"18.341836,42.328872",Active,أبها,16/5,Yes
-Asir Health Cluster,1487,Bahr Abu Sakinah,PHC,18.3312558,41.9034541,"18.3312558,41.9034541",Active,محايل,24/7,No
-Asir Health Cluster,1495,Bahwan,PHC,18.71,42.416,"18.71,42.416",Active,بللحمر,8,No
-Bisha Health Affairs,1493,Bani A'amro,PHC,19.3780066,42.0487011,"19.3780066,42.0487011",Active,العلاية,24/7,No
-Asir Health Cluster,3676,Bani Dheeb,PHC,18.6948607,41.6208565,"18.6948607,41.6208565",Active,محايل,8,No
-Asir Health Cluster,1491,Bani Junah,PHC,18.1565769,42.2831905,"18.1565769,42.2831905",Active,رجال ألمع,8,No
-Asir Health Cluster,1494,Bani Malik,PHC,18.34753,42.56137,"18.34753,42.56137",Active,أبها,8,No
-Asir Health Cluster,1492,Bani Shadan,PHC,18.40383,42.56691,"18.40383,42.56691",Active,أبها,8,No
-Asir Health Cluster,1485,Bariq,PHC,18.925,41.93966,"18.925,41.93966",Active,بارق,24/7,No
-Bisha Health Affairs,1486,Bashut,PHC,19.59594,41.89707,"19.59594,41.89707",Active,العلاية,8,No
-Asir Health Cluster,1496,Bihan,PHC,18.6320533,42.3185455,"18.6320533,42.3185455",Active,بللحمر,8,No
-Asir Health Cluster,1490,Bilasmar,PHC,18.7742377,42.2465301,"18.7742377,42.2465301",Active,بللسمر,24/7,Yes
-Asir Health Cluster,1488,Breem Al-Saleel,PHC,18.7338406,42.8497803,"18.7338406,42.8497803",Active,وادي بن هشبل,8,No
-Asir Health Cluster,1510,Center 24,PHC,18.6717794,42.0636034,"18.6717794,42.0636034",Active,محايل,8,No
-Asir Health Cluster,1531,Dhara'a,PHC,18.5200422,41.7159998,"18.5200422,41.7159998",Active,البرك,8,No
-Asir Health Cluster,1563,Duha Sayala,PHC,18.89602,41.594825,"18.89602,41.594825",Active,بارق,8,No
-Asir Health Cluster,3445,East Khamis Mushait,PHC,18.3289235,42.7503275,"18.3289235,42.7503275",Active,خميس مشيط,8,No
-Asir Health Cluster,1583,Far'ayt Salman,PHC,19.16414,42.18102,"19.16414,42.18102",Active,النماص,8,No
-Asir Health Cluster,1582,Farshat,PHC,18.6226032,42.1491158,"18.6226032,42.1491158",Active,محايل,8,No
-Asir Health Cluster,1580,Ghamrah,PHC,18.2874446,42.2111883,"18.2874446,42.2111883",Active,رجال ألمع,8,No
-Asir Health Cluster,3697,Habtan,PHC,18.6761805,41.839006,"18.6761805,41.839006",Active,محايل,8,No
-Asir Health Cluster,1514,Halba'a,PHC,19.27265,42.09629,"19.27265,42.09629",Active,النماص,16/5,No
-Asir Health Cluster,1517,Hawarit Kays,PHC,18.1966426,42.3193983,"18.1966426,42.3193983",Active,رجال ألمع,8,No
-Asir Health Cluster,1516,Hawra'a,PHC,18.86451,42.2507,"18.86451,42.2507",Active,بللسمر,8,No
-Bisha Health Affairs,2063,Hawran,PHC,19.773979,42.2464143,"19.773979,42.2464143",Active,الجنوبي,8,No
-Asir Health Cluster,1515,Hemeid Al-A'alaia,PHC,18.77401,41.91234,"18.77401,41.91234",Active,محايل,16/5,No
-Asir Health Cluster,2468,Ibn Sina'a,PHC,18.3861953,42.8009762,"18.3861953,42.8009762",Active,خميس مشيط,8,No
-Asir Health Cluster,4856,Janub bareq,PHC,18.859894,41.969169,"18.859894,41.969169",Active,بارق,8,No
-Asir Health Cluster,4585,Janub Tareeb,PHC,18.533777,43.191223,"18.533777,43.191223",Active,المضة,8,No
-Bisha Health Affairs,1508,Jash,PHC,19.37206,43.44976,"19.37206,43.44976",Active,تثليث,8,No
-Asir Health Cluster,1513,Jawf Al Me'mar,PHC,18.25018,43.20479,"18.25018,43.20479",Active,سراة عبيدة,8,No
-Asir Health Cluster,1511,Juma'at Al-Mukatarah,PHC,19.05529,41.50867,"19.05529,41.50867",Active,بارق,16/5,No
-Asir Health Cluster,1587,Katam,PHC,17.6152695,43.5340762,"17.6152695,43.5340762",Active,ظهران الجنوب,8,No
-Asir Health Cluster,3718,Khalsah Nasbah,PHC,18.962762,41.673352,"18.962762,41.673352",Active,بارق,8,No
-Asir Health Cluster,1524,Khamees Mutayar,PHC,18.7021879,42.1093726,"18.7021879,42.1093726",Active,محايل,8,No
-Asir Health Cluster,1520,Kharif,PHC,18.94382,42.35088,"18.94382,42.35088",Active,بللسمر,8,No
-Asir Health Cluster,1521,Khat,PHC,19.1140799,42.0309341,"19.1140799,42.0309341",Active,المجاردة,8,No
-Asir Health Cluster,1522,Khatbah,PHC,19.1995966,41.94785,"19.1995966,41.94785",Active,المجاردة,8,No
-Bisha Health Affairs,1523,Khathaam,PHC,19.7948,41.89348,"19.7948,41.89348",Active,البشاير,8,No
-Asir Health Cluster,1525,Khush Barq,PHC,19.0022882,41.8792641,"19.0022882,41.8792641",Active,بارق,8,No
-Asir Health Cluster,1528,King Faisal Charity (Al-Heradah),PHC,17.81763,41.88733,"17.81763,41.88733",Active,القحمة,8,No
-Asir Health Cluster,1529,King Faisal Charity Al-Wadiyin,PHC,18.08276,42.77495,"18.08276,42.77495",Active,أحد رفيدة,8,No
-Asir Health Cluster,1588,Kod Al- Safiah,PHC,18.5430728,42.9094219,"18.5430728,42.9094219",Active,خميس مشيط,8,No
-Asir Health Cluster,1589,Lateen,PHC,18.279002,42.0052224,"18.279002,42.0052224",Active,محايل,8,No
-Asir Health Cluster,1592,Madint Sultan,PHC,18.26559,42.62236,"18.26559,42.62236",Active,أبها,8,No
-Asir Health Cluster,1591,Mahail,PHC,18.56904,42.03703,"18.56904,42.03703",Active,محايل,24/7,No
-Asir Health Cluster,3818,Mahail Center (Albasateen Mall),PHC,18.548473,42.0359,"18.548473,42.0359",Active,محايل,8,No
-Asir Health Cluster,1597,Malhyt Al-Habab,PHC,18.39815,43.64557,"18.39815,43.64557",Active,المضة,8,No
-Asir Health Cluster,1598,Mansibah Health Sector,PHC,19.160249,42.5394058,"19.160249,42.5394058",Active,تنومه,8,No
-Asir Health Cluster,1593,Merabah Al-Sufla,PHC,17.8190964,42.3619402,"17.8190964,42.3619402",Active,أبها,16/5,No
-Asir Health Cluster,4118,Muhail West 1,PHC,18.568266,41.976105,"18.568266,41.976105",Active,محايل,8,No
-Asir Health Cluster,4119,Muhail West 2,PHC,18.532957,41.890934,"18.532957,41.890934",Active,محايل,8,No
-Bisha Health Affairs,2048,Muhr,PHC,19.85061,42.40593,"19.85061,42.40593",Active,الجنوبي,8,No
-Asir Health Cluster,3780,Mukhatat 1,PHC,18.34418,42.72588,"18.34418,42.72588",Active,خميس مشيط,8,No
-Bisha Health Affairs,2040,Namran,PHC,19.99539,42.59468,"19.99539,42.59468",Active,المدينة,8,No
-Asir Health Cluster,1600,Nashyan,PHC,19.079926,42.137954,"19.079926,42.137954",Active,النماص,24/7,Yes
-Asir Health Cluster,5254,north Al-Furshahl,PHC,17.8762,43.05661,"17.8762,43.05661",Active,الفرشة,8,No
-Asir Health Cluster,3740,north khyber,PHC,18.915863,42.887734,"18.915863,42.887734",Active,وادي بن هشبل,8,No
-Asir Health Cluster,1585,Qina,PHC,18.33208,41.97444,"18.33208,41.97444",Active,محايل,24/7,No
-Bisha Health Affairs,3727,Rabeh ,PHC,19.703969,43.76657,"19.703969,43.76657",Active,تثليث,8,No
-Asir Health Cluster,1537,Radoom,PHC,17.7876647,42.8278362,"17.7876647,42.8278362",Active,أبها,8,No
-Asir Health Cluster,1534,Rahyt Sanhan,PHC,17.83844,43.4124,"17.83844,43.4124",Active,الحرجة,8,No
-Asir Health Cluster,3726,rakah,PHC,18.577072,41.56963,"18.577072,41.56963",Active,البرك,8,No
-Bisha Health Affairs,4478,RAWSHAN,PHC,20.00237,42.596421,"20.00237,42.596421",Active,المدينة,24/7,No
-Asir Health Cluster,1535,Rebbua'a Al-Serw,PHC,19.3031443,42.0746665,"19.3031443,42.0746665",Active,النماص,8,No
-Asir Health Cluster,1539,Rudan Al-Selil,PHC,18.6132085,42.8159627,"18.6132085,42.8159627",Active,وادي بن هشبل,8,No
-Asir Health Cluster,1538,Rwam,PHC,18.4137029,42.0542448,"18.4137029,42.0542448",Active,رجال ألمع,8,No
-Asir Health Cluster,1541,Rydat Al Jylayhah,PHC,17.91657,42.77525,"17.91657,42.77525",Active,أبها,8,No
-Bisha Health Affairs,1542,Sabt Al-A'alaia Health Sector,PHC,19.55776,41.95127,"19.55776,41.95127",Active,العلاية,16/5,No
-Asir Health Cluster,1543,Sabt Bani Bashr,PHC,17.9888561,43.1373024,"17.9888561,43.1373024",Active,سراة عبيدة,8,No
-Asir Health Cluster,1544,Sabt Tanumah,PHC,18.95257,42.17531,"18.95257,42.17531",Active,تنومه,8,No
-Asir Health Cluster,1560,Sadr Wa'alah,PHC,17.8747293,42.5769621,"17.8747293,42.5769621",Active,أبها,8,No
-Asir Health Cluster,1545,Sadwan,PHC,18.8776458,42.2234899,"18.8776458,42.2234899",Active,بللسمر,8,No
-Asir Health Cluster,3335,Sahar al-aasem,PHC,18.4321956,42.1183117,"18.4321956,42.1183117",Active,محايل,8,No
-Asir Health Cluster,1549,Sahl Tenomah,PHC,18.92834,42.18971,"18.92834,42.18971",Active,تنومه,24/7,Yes
-Asir Health Cluster,1562,Salhah and Habkan,PHC,18.71035,42.49328,"18.71035,42.49328",Active,بللحمر,8,No
-Bisha Health Affairs,2053,Samkh,PHC,19.37058,42.80091,"19.37058,42.80091",Active,المدينة,24/7,No
-Asir Health Cluster,1546,Sarat Obeidah,PHC,18.08647,43.13855,"18.08647,43.13855",Active,سراة عبيدة,16/5,Yes
-Bisha Health Affairs,1553,Sha'af Bilqarn,PHC,19.53008,41.89766,"19.53008,41.89766",Active,العلاية,8,No
-Asir Health Cluster,1554,Sha'af Jaraymah,PHC,18.0430126,42.9576802,"18.0430126,42.9576802",Active,أحد رفيدة,8,No
-Asir Health Cluster,3739,Shafan,PHC,18.722369,42.6864982,"18.722369,42.6864982",Active,وادي بن هشبل,8,No
-Asir Health Cluster,4843,Shamal tharban PHC,PHC,19.207023,41.714634,"19.207023,41.714634",Active,المجاردة,8,No
-Asir Health Cluster,4774,SHARQ ALMADHA,PHC,18.9565155,43.4050338,"18.9565155,43.4050338",Active,المضة,8,No
-Bisha Health Affairs,1557,Shawas,PHC,19.869162,41.93387,"19.869162,41.93387",Active,البشاير,24/7,No
-Asir Health Cluster,1550,Sheba'a,PHC,18.31986,42.72285,"18.31986,42.72285",Active,خميس مشيط,8,No
-Bisha Health Affairs,2046,Shediq,PHC,19.98413,42.36779,"19.98413,42.36779",Active,الغربي,8,No
-Asir Health Cluster,2478,Social Development,PHC,18.3095,42.85149,"18.3095,42.85149",Active,خميس مشيط,8,No
-Asir Health Cluster,4570,South Habeel,PHC,18.021671,42.276494,"18.021671,42.276494",Active,رجال ألمع,8,No
-Bisha Health Affairs,2066,South of Al-Madinah,PHC,19.97932,42.59275,"19.97932,42.59275",Active,المدينة,24/7,No
-Asir Health Cluster,1526,Southern Khaybar,PHC,18.8036029,42.8622043,"18.8036029,42.8622043",Active,وادي بن هشبل,16/5,No
-Asir Health Cluster,1559,Subh,PHC,18.6264819,42.3207951,"18.6264819,42.3207951",Active,بللحمر,24/7,Yes
-Asir Health Cluster,1561,Sulb,PHC,18.1258119,42.2850644,"18.1258119,42.2850644",Active,رجال ألمع,8,No
-Asir Health Cluster,1564,Tabab,PHC,18.37297,42.37317,"18.37297,42.37317",Active,أبها,8,No
-Bisha Health Affairs,2067,Tabala Fara,PHC,20.01251,42.20217,"20.01251,42.20217",Active,الغربي,8,No
-Bisha Health Affairs,1566,Talala,PHC,19.55153,42.08147,"19.55153,42.08147",Active,العلاية,8,No
-Asir Health Cluster,1499,Tandaht Al-Zaylal,PHC,18.34604,42.84298,"18.34604,42.84298",Active,خميس مشيط,16/5,No
-Asir Health Cluster,1503,Tarban,PHC,19.1180942,41.6172302,"19.1180942,41.6172302",Active,المجاردة,16/7,No
-Asir Health Cluster,1498,Tarqish,PHC,18.66382,42.01999,"18.66382,42.01999",Active,محايل,8,No
-Asir Health Cluster,1500,Tayah,PHC,18.4779911,42.3936868,"18.4779911,42.3936868",Active,محايل,8,No
-Bisha Health Affairs,2047,Tebalah Al Mobraz,PHC,20.026764,42.236453,"20.026764,42.236453",Active,الغربي,8,No
-Asir Health Cluster,1533,Thahban,PHC,18.1011909,41.6150271,"18.1011909,41.6150271",Active,البرك,8,No
-Asir Health Cluster,1567,Thahran Al-Janoub,PHC,17.6618929,43.5210871,"17.6618929,43.5210871",Active,ظهران الجنوب,16/7,No
-Bisha Health Affairs,1502,Thajr Sweidan,PHC,18.364639,43.7965,"18.364639,43.7965",Active,الأمواه,8,No
-Asir Health Cluster,1504,Thalouth Al-Manthar,PHC,18.7992407,42.036978,"18.7992407,42.036978",Active,بارق,16/7,No
-Asir Health Cluster,1505,thalouth Haswa,PHC,18.1334845,42.3173726,"18.1334845,42.3173726",Active,رجال ألمع,8,No
-Asir Health Cluster,1506,Thalouth Reem,PHC,18.1899655,42.1581221,"18.1899655,42.1581221",Active,رجال ألمع,8,No
-Asir Health Cluster,1565,Trayb,PHC,18.5923585,43.2025766,"18.5923585,43.2025766",Active,المضة,16/7,No
-Asir Health Cluster,2564,Um Sarar,PHC,18.3009393,42.7403623,"18.3009393,42.7403623",Active,خميس مشيط,24/7,No
-Asir Health Cluster,1577,Umk,PHC,18.45633,41.46779,"18.45633,41.46779",Active,البرك,8,No
-Bisha Health Affairs,2052,Wa'ar,PHC,19.80563,42.52036,"19.80563,42.52036",Active,الجنوبي,8,No
-Asir Health Cluster,1602,Wadi Al-Fidh,PHC,18.01363,43.46055,"18.01363,43.46055",Active,الحرجة,16/5,No
-Asir Health Cluster,1601,Wadi Al-Hayah,PHC,17.6129436,43.0561061,"17.6129436,43.0561061",Active,الفرشة,16/5,No
-Asir Health Cluster,1489,Wadi Al-kheer,PHC,18.9087529,42.0564097,"18.9087529,42.0564097",Active,بارق,8,No
-Asir Health Cluster,1604,Wadi BIN Habshil,PHC,18.59588,42.69248,"18.59588,42.69248",Active,وادي بن هشبل,24/7,No
-Asir Health Cluster,1609,Wadi Dhahab,PHC,17.94827,42.85376,"17.94827,42.85376",Active,أبها,8,No
-Asir Health Cluster,1607,Wadi Halali,PHC,18.08329,42.53976,"18.08329,42.53976",Active,أبها,8,No
-Asir Health Cluster,1606,Wadi Jinab,PHC,17.95315,43.5159,"17.95315,43.5159",Active,الحرجة,8,No
-Asir Health Cluster,3816,Wadi Sakar,PHC,17.995473,42.622724,"17.995473,42.622724",Active,أبها,8,No
-Asir Health Cluster,1610,Wadi Sohoul,PHC,18.9841932,41.7657065,"18.9841932,41.7657065",Active,بارق,8,No
-Asir Health Cluster,3814,Wadi Tadhraa,PHC,17.9101016,42.6433843,"17.9101016,42.6433843",Active,أبها,8,No
-Asir Health Cluster,1605,Wadi Taraj,PHC,19.046805,42.2260951,"19.046805,42.2260951",Active,تنومه,8,No
-Asir Health Cluster,3815,Wadi Zaid,PHC,19.220162,42.070642,"19.220162,42.070642",Active,النماص,8,No
-Asir Health Cluster,1612,Wasanib,PHC,18.3489681,42.2384602,"18.3489681,42.2384602",Active,رجال ألمع,8,No
-Asir Health Cluster,1613,Wasat Abha,PHC,18.22728,42.50791,"18.22728,42.50791",Active,أبها,8,No
-Asir Health Cluster,3752,West  Khamis Mushait,PHC,18.31945,42.70105,"18.31945,42.70105",Active,خميس مشيط,8,No
-Asir Health Cluster,3767,west farsha,PHC,17.780783,42.881896,"17.780783,42.881896",Active,الفرشة,8,No
-Bisha Health Affairs,3770,West of Tasleet,PHC,19.567228,43.502544,"19.567228,43.502544",Active,تثليث,16/5,No
-Asir Health Cluster,3450,Western Al-Ruhayb,PHC,17.6582739,43.5125971,"17.6582739,43.5125971",Active,ظهران الجنوب,8,No
-Asir Health Cluster,1615,Ya'ara,PHC,18.6755,42.97435,"18.6755,42.97435",Active,وادي بن هشبل,8,No
-Asir Health Cluster,1616,Ya'aud Al-Qulah,PHC,17.97467,43.35618,"17.97467,43.35618",Active,الحرجة,8,No
-Bisha Health Affairs,2563,yhra ,PHC,19.729917,43.196222,"19.729917,43.196222",Active,تثليث,8,No
-Bisha Health Affairs,,الواسط / حلية,PHC,18.91697606,43.77193932,"18.916976062899,43.7719393238681",Active,تثليث,8,No
-Bisha Health Affairs,,خيور,PHC,19.23386362,44.18725778,"19.233863616105,44.1872577801019",Active,تثليث,8,No
-Bisha Health Affairs,,هجرة نعمان,PHC,19.21292989,43.9324066,"19.2129298864172,43.9324065991706",Active,تثليث,8,No
+directorate_name,facility_cd,facility_name,facilitytype,latitude,longitude,Location,facility_status,Sector,working hours,Added in Summer Plan,Size
+Asir Health Cluster,3333, sueban,PHC,18.86992,41.93211,"18.86992,41.93211",Active,بارق,8,No,40
+Asir Health Cluster,3754,A'abal,PHC,18.53741,42.42025,"18.53741,42.42025",Active,بللحمر,8,No,40
+Asir Health Cluster,1568,A'aksah,PHC,19.15638,42.14104,"19.15638,42.14104",Active,النماص,8,No,40
+Asir Health Cluster,1570,Abass,PHC,19.29864,41.96172,"19.29864,41.96172",Active,المجاردة,8,No,40
+Asir Health Cluster,1575,A'elo Mirbah,PHC,18.0905236,42.3737097,"18.0905236,42.3737097",Active,أبها,8,No,40
+Asir Health Cluster,1578,Ain Al-Luy,PHC,18.04601,43.01781,"18.04601,43.01781",Active,سراة عبيدة,8,No,40
+Bisha Health Affairs,1579,Ain Qahtan,PHC,18.93077,44.06199,"18.93077,44.06199",Active,الأمواه,8,No,40
+Bisha Health Affairs,2041,Airport District,PHC,20.00044,42.61543,"20.00044,42.61543",Active,المدينة,8,No,40
+Asir Health Cluster,1556,Airport North,PHC,18.31473,42.74687,"18.31473,42.74687",Active,خميس مشيط,8,No,40
+Asir Health Cluster,4108,Akhlal,PHC,18.208814,42.019102,"18.208814,42.019102",Active,محايل,8,No,40
+Asir Health Cluster,2565,Al Brayd,PHC,18.17952,42.84373,"18.17952,42.84373",Active,أحد رفيدة,8,No,40
+Bisha Health Affairs,1581,AL Ghamis Alwahlan,PHC,18.5238,43.64198,"18.5238,43.64198",Active,الأمواه,8,No,40
+Asir Health Cluster,2577,Al Ghelan,PHC,19.0881567,41.7860082,"19.0881567,41.7860082",Active,المجاردة,8,No,40
+Asir Health Cluster,2572,Al Khalf,PHC,17.9604142,43.1286335,"17.9604142,43.1286335",Active,سراة عبيدة,8,No,40
+Asir Health Cluster,2570,Al Khatrish,PHC,18.43839,41.90953,"18.43839,41.90953",Active,محايل,8,No,40
+Asir Health Cluster,636,Al- Malaha,PHC,18.3647184,42.4671149,"18.3647184,42.4671149",Active,أبها,8,No,40
+Bisha Health Affairs,4481,Al Matla,PHC,19.729917,42.196222,"19.729917,42.196222",Active,العلاية,8,No,40
+Bisha Health Affairs,2576,Al Salamah Al Zarya,PHC,19.4168668,41.994735,"19.4168668,41.994735",Active,العلاية,8,No,40
+Asir Health Cluster,2574,Al Sarhan,PHC,18.12674,42.68557,"18.12674,42.68557",Active,أبها,8,No,40
+Asir Health Cluster,637,Al Tanmia,PHC,18.00147,42.75239,"18.00147,42.75239",Active,أبها,8,No,40
+Asir Health Cluster,1484,Al Yazid,PHC,18.09778,42.67968,"18.09778,42.67968",Active,أبها,8,No,40
+Asir Health Cluster,2519,Al-A'ardayn,PHC,17.96546,43.20679,"17.96546,43.20679",Active,سراة عبيدة,8,No,40
+Asir Health Cluster,2524,Al-A'asran,PHC,18.048674,43.062908,"18.048674,43.062908",Active,سراة عبيدة,8,No,40
+Bisha Health Affairs,3439,Alaetf 2,PHC,20.13866,42.6318,"20.13866,42.6318",Active,الشمالي,8,No,40
+Asir Health Cluster,2526,Alammarh,PHC,18.38159,42.64721,"18.38159,42.64721",Active,خميس مشيط,8,No,40
+Asir Health Cluster,2521,Al-Areen (Abha),PHC,18.2408457,42.5305706,"18.2408457,42.5305706",Active,أبها,8,No,40
+Asir Health Cluster,2522,Al-Azizah,PHC,18.20755,42.42947,"18.20755,42.42947",Active,أبها,8,No,40
+Bisha Health Affairs,2064,Al-Baheem,PHC,19.69994,42.36231,"19.69994,42.36231",Active,الجنوبي,8,No,40
+Asir Health Cluster,2473,Al-Bataelah,PHC,18.1934673,42.2697722,"18.1934673,42.2697722",Active,رجال ألمع,8,No,40
+Asir Health Cluster,3366,Albatnah,PHC,18.863174,42.638692,"18.863174,42.638692",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,2474,Al-Bayrak,PHC,18.22973,41.53255,"18.22973,41.53255",Active,البرك,8,No,40
+Bisha Health Affairs,2476,Al-Bazazah,PHC,19.62371,41.97418,"19.62371,41.97418",Active,العلاية,8,No,40
+Asir Health Cluster,2477,Al-Buka'a,PHC,17.7179273,43.2688844,"17.7179273,43.2688844",Active,ظهران الجنوب,8,No,40
+Bisha Health Affairs,2042,Al-Dajw,PHC,20.1028283,42.660005,"20.1028283,42.660005",Active,المدينة,8,No,40
+Asir Health Cluster,2511,Al-Dhars,PHC,18.5422286,42.0841347,"18.5422286,42.0841347",Active,محايل,8,No,40
+Asir Health Cluster,2520,Al-Erqeen,PHC,18.3352582,43.2766056,"18.3352582,43.2766056",Active,سراة عبيدة,8,No,40
+Bisha Health Affairs,2534,Al-Fara,PHC,18.58046,43.91029,"18.58046,43.91029",Active,الأمواه,8,No,40
+Asir Health Cluster,2539,Al-Fara'a Health Center,PHC,18.07178,42.69689,"18.07178,42.69689",Active,أبها,8,No,40
+Asir Health Cluster,2535,Al-Fara'ayn,PHC,18.15296,42.96215,"18.15296,42.96215",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,3694,Al-Farshah South,PHC,17.673499,43.171767,"17.673499,43.171767",Active,الفرشة,8,No,40
+Asir Health Cluster,2536,Al-Fayd,PHC,18.3604214,41.7213249,"18.3604214,41.7213249",Active,البرك,8,No,40
+Bisha Health Affairs,3568,Alfoaha,PHC,19.76958,41.96542,"19.76958,41.96542",Active,البشاير,8,No,40
+Asir Health Cluster,2533,Al-Furshah,PHC,17.74876,43.15475,"17.74876,43.15475",Active,الفرشة,8,No,40
+Bisha Health Affairs,2049,Al-Ghafrat,PHC,19.785237,42.411298,"19.785237,42.411298",Active,الجنوبي,8,No,40
+Asir Health Cluster,2531,Al-Ghayna'a,PHC,18.02742,42.41477,"18.02742,42.41477",Active,أبها,8,No,40
+Asir Health Cluster,2530,Al-Gheel,PHC,17.73899,43.52682,"17.73899,43.52682",Active,ظهران الجنوب,8,No,40
+Asir Health Cluster,2529,Al-Ghul,PHC,17.74349,43.34104,"17.74349,43.34104",Active,الحرجة,8,No,40
+Asir Health Cluster,2527,Al-Ghurs,PHC,18.4962149,43.3599293,"18.4962149,43.3599293",Active,المضة,8,No,40
+Asir Health Cluster,2483,Al-Hajir,PHC,17.5007814,43.6199498,"17.5007814,43.6199498",Active,ظهران الجنوب,8,No,40
+Asir Health Cluster,2560,Al-Hamijah,PHC,18.30918,42.72146,"18.30918,42.72146",Active,خميس مشيط,8,No,40
+Asir Health Cluster,2485,Al-Harjah,PHC,17.92403,43.36467,"17.92403,43.36467",Active,الحرجة,8,No,40
+Asir Health Cluster,2492,Alhay al jadeed,PHC,18.29328,42.75914,"18.29328,42.75914",Active,خميس مشيط,8,No,40
+Asir Health Cluster,2493,Al-Haymah,PHC,18.7240151,42.5690853,"18.7240151,42.5690853",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,2486,Al-Heradah,PHC,17.7845642,41.9402111,"17.7845642,41.9402111",Active,القحمة,8,No,40
+Asir Health Cluster,3653,Al-Herar and Zlalh,PHC,18.2424022,42.7647024,"18.2424022,42.7647024",Active,خميس مشيط,8,No,40
+Bisha Health Affairs,2070,Al-Hufairah,PHC,19.44796,42.84464,"19.44796,42.84464",Active,المدينة,8,No,40
+Bisha Health Affairs,3413,Al-Humayd,PHC,19.5970401,41.9573665,"19.5970401,41.9573665",Active,العلاية,8,No,40
+Bisha Health Affairs,2051,Al-Hyfah,PHC,19.86542,42.53551,"19.86542,42.53551",Active,الجنوبي,8,No,40
+Asir Health Cluster,2472,Al-ihmal,PHC,18.2714643,42.0633965,"18.2714643,42.0633965",Active,رجال ألمع,8,No,40
+Asir Health Cluster,2481,Al-Jamah,PHC,18.478968,41.7111432,"18.478968,41.7111432",Active,البرك,8,No,40
+Asir Health Cluster,2482,Al-Jawa,PHC,17.906018,43.2381964,"17.906018,43.2381964",Active,سراة عبيدة,8,No,40
+Bisha Health Affairs,2058,Al-Jaynanah,PHC,20.27287,42.80218,"20.27287,42.80218",Active,الشمالي,8,No,40
+Asir Health Cluster,2480,Al-Jazerah and Al-Jarfayn',PHC,19.0640243,42.9937613,"19.0640243,42.9937613",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,3385,Al-Juhayfah,PHC,17.93035,42.7117,"17.93035,42.7117",Active,أبها,8,No,40
+Asir Health Cluster,2538,Al-Kamhah,PHC,18.00201,41.6797,"18.00201,41.6797",Active,القحمة,8,No,40
+Asir Health Cluster,3430,Al-Khangah,PHC,18.3112015,43.5185337,"18.3112015,43.5185337",Active,المضة,8,No,40
+Asir Health Cluster,2540,Al-Kurayha,PHC,18.8691936,42.013834,"18.8691936,42.013834",Active,بارق,8,No,40
+Asir Health Cluster,2550,Al-Madah,PHC,18.8363992,43.2437646,"18.8363992,43.2437646",Active,المضة,8,No,40
+Asir Health Cluster,4114,Al-Majardah East,PHC,19.1304712,41.9353258,"19.1304712,41.9353258",Active,المجاردة,8,No,40
+Asir Health Cluster,2551,Al-Maka'ad,PHC,18.50666,42.10617,"18.50666,42.10617",Active,محايل,8,No,40
+Asir Health Cluster,2552,Al-Manjah,PHC,18.2116581,41.8942201,"18.2116581,41.8942201",Active,محايل,8,No,40
+Asir Health Cluster,2549,Al-Masna'ah,PHC,18.28896,42.46193,"18.28896,42.46193",Active,أبها,8,No,40
+Asir Health Cluster,2543,Al-Maween,PHC,18.65482,42.43674,"18.65482,42.43674",Active,بللحمر,8,No,40
+Asir Health Cluster,3594,Al-Muhalah,PHC,18.28442,42.5933,"18.28442,42.5933",Active,أبها,8,No,40
+Bisha Health Affairs,2061,Al-Muhalah,PHC,19.46231,42.3493,"19.46231,42.3493",Active,الجنوبي,8,No,40
+Bisha Health Affairs,2039,Al-Mukhattat 1,PHC,20.02288,42.61828,"20.02288,42.61828",Active,المدينة,8,No,40
+Bisha Health Affairs,2057,Al-Mukhattat 2,PHC,20.01441,42.61756,"20.01441,42.61756",Active,المدينة,8,No,40
+Asir Health Cluster,2548,Al-Muslimah,PHC,18.96327,41.98115,"18.96327,41.98115",Active,بارق,8,No,40
+Asir Health Cluster,2555,Al-Na'adaa,PHC,18.3000149,43.7847518,"18.3000149,43.7847518",Active,الحرجة,8,No,40
+Asir Health Cluster,2554,Al-Najdayn,PHC,18.3570204,42.1241425,"18.3570204,42.1241425",Active,رجال ألمع,8,No,40
+Asir Health Cluster,2556,Al-Namas,PHC,19.12868,42.13456,"19.12868,42.13456",Active,النماص,8,No,40
+Asir Health Cluster,2557,Al-Numays,PHC,18.2133211,42.5277972,"18.2133211,42.5277972",Active,أبها,8,No,40
+Asir Health Cluster,4111,Al-Qa'aah,PHC,18.493219,43.077432,"18.493219,43.077432",Active,خميس مشيط,8,No,40
+Asir Health Cluster,2537,Al-Qabil,PHC,18.21856,42.4934,"18.21856,42.4934",Active,أبها,8,No,40
+Asir Health Cluster,2541,Al-Qalfa'a,PHC,18.4061627,42.3467738,"18.4061627,42.3467738",Active,أبها,8,No,40
+Bisha Health Affairs,2050,Al-Qwba'a,PHC,19.54493,42.27709,"19.54493,42.27709",Active,الجنوبي,8,No,40
+Bisha Health Affairs,3461,ALRAHWA,PHC,18.74029,43.86787,"18.74029,43.86787",Active,الأمواه,8,No,40
+Bisha Health Affairs,2072,Al-Rass,PHC,19.46667,42.52512,"19.46667,42.52512",Active,الجنوبي,8,No,40
+Asir Health Cluster,2499,Al-Rawnah,PHC,18.22696,42.80267,"18.22696,42.80267",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,2498,Al-Refqah and Al-Malahah,PHC,18.01121,43.53095,"18.01121,43.53095",Active,الحرجة,8,No,40
+Asir Health Cluster,2501,Al-Resh,PHC,18.62799,42.09376,"18.62799,42.09376",Active,محايل,8,No,40
+Bisha Health Affairs,2060,Al-Ruqita'a,PHC,20.159319,42.663963,"20.159319,42.663963",Active,الشمالي,8,No,40
+Asir Health Cluster,2504,Al-Salim,PHC,18.8067056,41.6597092,"18.8067056,41.6597092",Active,بارق,8,No,40
+Asir Health Cluster,2509,Al-Samkhiah,PHC,18.08882,42.82505,"18.08882,42.82505",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,2510,Al-Sawalahah,PHC,18.59364,41.41294,"18.59364,41.41294",Active,محايل,8,No,40
+Asir Health Cluster,2505,Al-Sawdah,PHC,18.26342,42.39076,"18.26342,42.39076",Active,أبها,8,No,40
+Bisha Health Affairs,2508,Al-Sbekhah,PHC,19.1032427,43.3124756,"19.1032427,43.3124756",Active,تثليث,8,No,40
+Asir Health Cluster,2506,Al-Shabeen,PHC,18.2269872,42.2821426,"18.2269872,42.2821426",Active,رجال ألمع,8,No,40
+Bisha Health Affairs,2055,Al-Shadakhah,PHC,20.03368,42.5879,"20.03368,42.5879",Active,المدينة,8,No,40
+Asir Health Cluster,3509,Al-Shalfa'a,PHC,18.386559,42.502022,"18.386559,42.502022",Active,أبها,8,No,40
+Bisha Health Affairs,2045,Al-Shaqyqah,PHC,20.27849,42.7649,"20.27849,42.7649",Active,الشمالي,8,No,40
+Asir Health Cluster,3497,Al-Sharfiayh,PHC,18.30481,42.7546,"18.30481,42.7546",Active,خميس مشيط,8,No,40
+Asir Health Cluster,2507,Al-Shayq,PHC,18.69515,42.87648,"18.69515,42.87648",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,2512,Al-Tahahyeen,PHC,18.76113,41.87292,"18.76113,41.87292",Active,محايل,8,No,40
+Asir Health Cluster,2513,Al-Talalya'a,PHC,19.0558611,41.7861128,"19.0558611,41.7861128",Active,المجاردة,8,No,40
+Asir Health Cluster,2514,Al-Talhah Healthcare Center,PHC,17.75886,43.5061,"17.75886,43.5061",Active,ظهران الجنوب,8,No,40
+Bisha Health Affairs,1467,Al-Ufairiah,PHC,20.58124,42.14816,"20.58124,42.14816",Active,الغربي,8,No,40
+Asir Health Cluster,2562,Al-Wahabah,PHC,18.176292,43.09149,"18.176292,43.09149",Active,سراة عبيدة,8,No,40
+Asir Health Cluster,2515,Al-Zaharah,PHC,19.04542,42.13117,"19.04542,42.13117",Active,النماص,8,No,40
+Bisha Health Affairs,2502,Al-Zarq,PHC,19.45543,43.82254,"19.45543,43.82254",Active,تثليث,8,No,40
+Asir Health Cluster,3783,Amir Abdel Rahman (Ahead Rufaida),PHC,18.17525,42.83127,"18.17525,42.83127",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,3757,Atoud Al-Amayir,PHC,18.228182,42.715286,"18.228182,42.715286",Active,خميس مشيط,8,No,40
+Asir Health Cluster,1495,Bahwan,PHC,18.71,42.416,"18.71,42.416",Active,بللحمر,8,No,40
+Asir Health Cluster,3676,Bani Dheeb,PHC,18.6948607,41.6208565,"18.6948607,41.6208565",Active,محايل,8,No,40
+Asir Health Cluster,1491,Bani Junah,PHC,18.1565769,42.2831905,"18.1565769,42.2831905",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1494,Bani Malik,PHC,18.34753,42.56137,"18.34753,42.56137",Active,أبها,8,No,40
+Asir Health Cluster,1492,Bani Shadan,PHC,18.40383,42.56691,"18.40383,42.56691",Active,أبها,8,No,40
+Bisha Health Affairs,1486,Bashut,PHC,19.59594,41.89707,"19.59594,41.89707",Active,العلاية,8,No,40
+Asir Health Cluster,1496,Bihan,PHC,18.6320533,42.3185455,"18.6320533,42.3185455",Active,بللحمر,8,No,40
+Asir Health Cluster,1488,Breem Al-Saleel,PHC,18.7338406,42.8497803,"18.7338406,42.8497803",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,1510,Center 24,PHC,18.6717794,42.0636034,"18.6717794,42.0636034",Active,محايل,8,No,40
+Asir Health Cluster,1531,Dhara'a,PHC,18.5200422,41.7159998,"18.5200422,41.7159998",Active,البرك,8,No,40
+Asir Health Cluster,1563,Duha Sayala,PHC,18.89602,41.594825,"18.89602,41.594825",Active,بارق,8,No,40
+Asir Health Cluster,3445,East Khamis Mushait,PHC,18.3289235,42.7503275,"18.3289235,42.7503275",Active,خميس مشيط,8,No,40
+Asir Health Cluster,1583,Far'ayt Salman,PHC,19.16414,42.18102,"19.16414,42.18102",Active,النماص,8,No,40
+Asir Health Cluster,1582,Farshat,PHC,18.6226032,42.1491158,"18.6226032,42.1491158",Active,محايل,8,No,40
+Asir Health Cluster,1580,Ghamrah,PHC,18.2874446,42.2111883,"18.2874446,42.2111883",Active,رجال ألمع,8,No,40
+Asir Health Cluster,3697,Habtan,PHC,18.6761805,41.839006,"18.6761805,41.839006",Active,محايل,8,No,40
+Asir Health Cluster,1517,Hawarit Kays,PHC,18.1966426,42.3193983,"18.1966426,42.3193983",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1516,Hawra'a,PHC,18.86451,42.2507,"18.86451,42.2507",Active,بللسمر,8,No,40
+Bisha Health Affairs,2063,Hawran,PHC,19.773979,42.2464143,"19.773979,42.2464143",Active,الجنوبي,8,No,40
+Asir Health Cluster,2468,Ibn Sina'a,PHC,18.3861953,42.8009762,"18.3861953,42.8009762",Active,خميس مشيط,8,No,40
+Asir Health Cluster,4856,Janub bareq,PHC,18.859894,41.969169,"18.859894,41.969169",Active,بارق,8,No,40
+Asir Health Cluster,4585,Janub Tareeb,PHC,18.533777,43.191223,"18.533777,43.191223",Active,المضة,8,No,40
+Bisha Health Affairs,1508,Jash,PHC,19.37206,43.44976,"19.37206,43.44976",Active,تثليث,8,No,40
+Asir Health Cluster,1513,Jawf Al Me'mar,PHC,18.25018,43.20479,"18.25018,43.20479",Active,سراة عبيدة,8,No,40
+Asir Health Cluster,1587,Katam,PHC,17.6152695,43.5340762,"17.6152695,43.5340762",Active,ظهران الجنوب,8,No,40
+Asir Health Cluster,3718,Khalsah Nasbah,PHC,18.962762,41.673352,"18.962762,41.673352",Active,بارق,8,No,40
+Asir Health Cluster,1524,Khamees Mutayar,PHC,18.7021879,42.1093726,"18.7021879,42.1093726",Active,محايل,8,No,40
+Asir Health Cluster,1520,Kharif,PHC,18.94382,42.35088,"18.94382,42.35088",Active,بللسمر,8,No,40
+Asir Health Cluster,1521,Khat,PHC,19.1140799,42.0309341,"19.1140799,42.0309341",Active,المجاردة,8,No,40
+Asir Health Cluster,1522,Khatbah,PHC,19.1995966,41.94785,"19.1995966,41.94785",Active,المجاردة,8,No,40
+Bisha Health Affairs,1523,Khathaam,PHC,19.7948,41.89348,"19.7948,41.89348",Active,البشاير,8,No,40
+Asir Health Cluster,1525,Khush Barq,PHC,19.0022882,41.8792641,"19.0022882,41.8792641",Active,بارق,8,No,40
+Asir Health Cluster,1528,King Faisal Charity (Al-Heradah),PHC,17.81763,41.88733,"17.81763,41.88733",Active,القحمة,8,No,40
+Asir Health Cluster,1529,King Faisal Charity Al-Wadiyin,PHC,18.08276,42.77495,"18.08276,42.77495",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,1588,Kod Al- Safiah,PHC,18.5430728,42.9094219,"18.5430728,42.9094219",Active,خميس مشيط,8,No,40
+Asir Health Cluster,1589,Lateen,PHC,18.279002,42.0052224,"18.279002,42.0052224",Active,محايل,8,No,40
+Asir Health Cluster,1592,Madint Sultan,PHC,18.26559,42.62236,"18.26559,42.62236",Active,أبها,8,No,40
+Asir Health Cluster,3818,Mahail Center (Albasateen Mall),PHC,18.548473,42.0359,"18.548473,42.0359",Active,محايل,8,No,40
+Asir Health Cluster,1597,Malhyt Al-Habab,PHC,18.39815,43.64557,"18.39815,43.64557",Active,المضة,8,No,40
+Asir Health Cluster,1598,Mansibah Health Sector,PHC,19.160249,42.5394058,"19.160249,42.5394058",Active,تنومه,8,No,40
+Asir Health Cluster,4118,Muhail West 1,PHC,18.568266,41.976105,"18.568266,41.976105",Active,محايل,8,No,40
+Asir Health Cluster,4119,Muhail West 2,PHC,18.532957,41.890934,"18.532957,41.890934",Active,محايل,8,No,40
+Bisha Health Affairs,2048,Muhr,PHC,19.85061,42.40593,"19.85061,42.40593",Active,الجنوبي,8,No,40
+Asir Health Cluster,3780,Mukhatat 1,PHC,18.34418,42.72588,"18.34418,42.72588",Active,خميس مشيط,8,No,40
+Bisha Health Affairs,2040,Namran,PHC,19.99539,42.59468,"19.99539,42.59468",Active,المدينة,8,No,40
+Asir Health Cluster,5254,north Al-Furshahl,PHC,17.8762,43.05661,"17.8762,43.05661",Active,الفرشة,8,No,40
+Asir Health Cluster,3740,north khyber,PHC,18.915863,42.887734,"18.915863,42.887734",Active,وادي بن هشبل,8,No,40
+Bisha Health Affairs,3727,Rabeh ,PHC,19.703969,43.76657,"19.703969,43.76657",Active,تثليث,8,No,40
+Asir Health Cluster,1537,Radoom,PHC,17.7876647,42.8278362,"17.7876647,42.8278362",Active,أبها,8,No,40
+Asir Health Cluster,1534,Rahyt Sanhan,PHC,17.83844,43.4124,"17.83844,43.4124",Active,الحرجة,8,No,40
+Asir Health Cluster,3726,rakah,PHC,18.577072,41.56963,"18.577072,41.56963",Active,البرك,8,No,40
+Asir Health Cluster,1535,Rebbua'a Al-Serw,PHC,19.3031443,42.0746665,"19.3031443,42.0746665",Active,النماص,8,No,40
+Asir Health Cluster,1539,Rudan Al-Selil,PHC,18.6132085,42.8159627,"18.6132085,42.8159627",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,1538,Rwam,PHC,18.4137029,42.0542448,"18.4137029,42.0542448",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1541,Rydat Al Jylayhah,PHC,17.91657,42.77525,"17.91657,42.77525",Active,أبها,8,No,40
+Asir Health Cluster,1543,Sabt Bani Bashr,PHC,17.9888561,43.1373024,"17.9888561,43.1373024",Active,سراة عبيدة,8,No,40
+Asir Health Cluster,1544,Sabt Tanumah,PHC,18.95257,42.17531,"18.95257,42.17531",Active,تنومه,8,No,40
+Asir Health Cluster,1560,Sadr Wa'alah,PHC,17.8747293,42.5769621,"17.8747293,42.5769621",Active,أبها,8,No,40
+Asir Health Cluster,1545,Sadwan,PHC,18.8776458,42.2234899,"18.8776458,42.2234899",Active,بللسمر,8,No,40
+Asir Health Cluster,3335,Sahar al-aasem,PHC,18.4321956,42.1183117,"18.4321956,42.1183117",Active,محايل,8,No,40
+Asir Health Cluster,1562,Salhah and Habkan,PHC,18.71035,42.49328,"18.71035,42.49328",Active,بللحمر,8,No,40
+Bisha Health Affairs,1553,Sha'af Bilqarn,PHC,19.53008,41.89766,"19.53008,41.89766",Active,العلاية,8,No,40
+Asir Health Cluster,1554,Sha'af Jaraymah,PHC,18.0430126,42.9576802,"18.0430126,42.9576802",Active,أحد رفيدة,8,No,40
+Asir Health Cluster,3739,Shafan,PHC,18.722369,42.6864982,"18.722369,42.6864982",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,4843,Shamal tharban PHC,PHC,19.207023,41.714634,"19.207023,41.714634",Active,المجاردة,8,No,40
+Asir Health Cluster,4774,SHARQ ALMADHA,PHC,18.9565155,43.4050338,"18.9565155,43.4050338",Active,المضة,8,No,40
+Asir Health Cluster,1550,Sheba'a,PHC,18.31986,42.72285,"18.31986,42.72285",Active,خميس مشيط,8,No,40
+Bisha Health Affairs,2046,Shediq,PHC,19.98413,42.36779,"19.98413,42.36779",Active,الغربي,8,No,40
+Asir Health Cluster,2478,Social Development,PHC,18.3095,42.85149,"18.3095,42.85149",Active,خميس مشيط,8,No,40
+Asir Health Cluster,4570,South Habeel,PHC,18.021671,42.276494,"18.021671,42.276494",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1561,Sulb,PHC,18.1258119,42.2850644,"18.1258119,42.2850644",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1564,Tabab,PHC,18.37297,42.37317,"18.37297,42.37317",Active,أبها,8,No,40
+Bisha Health Affairs,2067,Tabala Fara,PHC,20.01251,42.20217,"20.01251,42.20217",Active,الغربي,8,No,40
+Bisha Health Affairs,1566,Talala,PHC,19.55153,42.08147,"19.55153,42.08147",Active,العلاية,8,No,40
+Asir Health Cluster,1498,Tarqish,PHC,18.66382,42.01999,"18.66382,42.01999",Active,محايل,8,No,40
+Asir Health Cluster,1500,Tayah,PHC,18.4779911,42.3936868,"18.4779911,42.3936868",Active,محايل,8,No,40
+Bisha Health Affairs,2047,Tebalah Al Mobraz,PHC,20.026764,42.236453,"20.026764,42.236453",Active,الغربي,8,No,40
+Asir Health Cluster,1533,Thahban,PHC,18.1011909,41.6150271,"18.1011909,41.6150271",Active,البرك,8,No,40
+Bisha Health Affairs,1502,Thajr Sweidan,PHC,18.364639,43.7965,"18.364639,43.7965",Active,الأمواه,8,No,40
+Asir Health Cluster,1505,thalouth Haswa,PHC,18.1334845,42.3173726,"18.1334845,42.3173726",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1506,Thalouth Reem,PHC,18.1899655,42.1581221,"18.1899655,42.1581221",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1577,Umk,PHC,18.45633,41.46779,"18.45633,41.46779",Active,البرك,8,No,40
+Bisha Health Affairs,2052,Wa'ar,PHC,19.80563,42.52036,"19.80563,42.52036",Active,الجنوبي,8,No,40
+Asir Health Cluster,1489,Wadi Al-kheer,PHC,18.9087529,42.0564097,"18.9087529,42.0564097",Active,بارق,8,No,40
+Asir Health Cluster,1609,Wadi Dhahab,PHC,17.94827,42.85376,"17.94827,42.85376",Active,أبها,8,No,40
+Asir Health Cluster,1607,Wadi Halali,PHC,18.08329,42.53976,"18.08329,42.53976",Active,أبها,8,No,40
+Asir Health Cluster,1606,Wadi Jinab,PHC,17.95315,43.5159,"17.95315,43.5159",Active,الحرجة,8,No,40
+Asir Health Cluster,3816,Wadi Sakar,PHC,17.995473,42.622724,"17.995473,42.622724",Active,أبها,8,No,40
+Asir Health Cluster,1610,Wadi Sohoul,PHC,18.9841932,41.7657065,"18.9841932,41.7657065",Active,بارق,8,No,40
+Asir Health Cluster,3814,Wadi Tadhraa,PHC,17.9101016,42.6433843,"17.9101016,42.6433843",Active,أبها,8,No,40
+Asir Health Cluster,1605,Wadi Taraj,PHC,19.046805,42.2260951,"19.046805,42.2260951",Active,تنومه,8,No,40
+Asir Health Cluster,3815,Wadi Zaid,PHC,19.220162,42.070642,"19.220162,42.070642",Active,النماص,8,No,40
+Asir Health Cluster,1612,Wasanib,PHC,18.3489681,42.2384602,"18.3489681,42.2384602",Active,رجال ألمع,8,No,40
+Asir Health Cluster,1613,Wasat Abha,PHC,18.22728,42.50791,"18.22728,42.50791",Active,أبها,8,No,40
+Asir Health Cluster,3752,West  Khamis Mushait,PHC,18.31945,42.70105,"18.31945,42.70105",Active,خميس مشيط,8,No,40
+Asir Health Cluster,3767,west farsha,PHC,17.780783,42.881896,"17.780783,42.881896",Active,الفرشة,8,No,40
+Asir Health Cluster,3450,Western Al-Ruhayb,PHC,17.6582739,43.5125971,"17.6582739,43.5125971",Active,ظهران الجنوب,8,No,40
+Asir Health Cluster,1615,Ya'ara,PHC,18.6755,42.97435,"18.6755,42.97435",Active,وادي بن هشبل,8,No,40
+Asir Health Cluster,1616,Ya'aud Al-Qulah,PHC,17.97467,43.35618,"17.97467,43.35618",Active,الحرجة,8,No,40
+Bisha Health Affairs,2563,yhra ,PHC,19.729917,43.196222,"19.729917,43.196222",Active,تثليث,8,No,40
+Bisha Health Affairs,,الواسط / حلية,PHC,18.91697606,43.77193932,"18.916976062899,43.7719393238681",Active,تثليث,8,No,40
+Bisha Health Affairs,,خيور,PHC,19.23386362,44.18725778,"19.233863616105,44.1872577801019",Active,تثليث,8,No,40
+Bisha Health Affairs,,هجرة نعمان,PHC,19.21292989,43.9324066,"19.2129298864172,43.9324065991706",Active,تثليث,8,No,40
+Bisha Health Affairs,1572,afra,PHC,19.696759,42.024439,"19.696759,42.024439",Active,العلاية,16/5,No,80
+Bisha Health Affairs,2491,Al- Hamdah,PHC,19.5285178,43.524034,"19.5285178,43.524034",Active,تثليث,16/5,No,80
+Asir Health Cluster,1595,Al masgi,PHC,18.05441,42.73649,"18.05441,42.73649",Active,أبها,16/5,No,80
+Asir Health Cluster,638,Al Saqa,PHC,18.2344,42.41033,"18.2344,42.41033",Active,أبها,16/5,No,80
+Asir Health Cluster,4109,Al-Areen (Qahtan),PHC,18.5607506,43.3855462,"18.5607506,43.3855462",Active,المضة,16/5,No,80
+Bisha Health Affairs,2475,Al-Basha'ar,PHC,19.7493162,41.9148696,"19.7493162,41.9148696",Active,البشاير,16/5,No,80
+Bisha Health Affairs,2054,Al-Hazimi,PHC,19.8703199,42.4934122,"19.8703199,42.4934122",Active,الجنوبي,16/5,No,80
+Bisha Health Affairs,2056,Al-Ja'abah,PHC,20.32998,42.11174,"20.32998,42.11174",Active,الغربي,16/5,No,80
+Asir Health Cluster,2544,Al-Majardah,PHC,19.1111878,41.9236997,"19.1111878,41.9236997",Active,المجاردة,16/5,No,80
+Asir Health Cluster,3592,Al-Majma'a-Al-A'akl-Mafragh Al-sayal,PHC,18.138285,42.097611,"18.138285,42.097611",Active,رجال ألمع,16/5,No,80
+Bisha Health Affairs,2044,Al-Naqeerah,PHC,20.2476938,42.7059415,"20.2476938,42.7059415",Active,الشمالي,16/5,No,80
+Asir Health Cluster,2561,Al-Wadiyin,PHC,18.07627,42.80329,"18.07627,42.80329",Active,أحد رفيدة,16/5,No,80
+Asir Health Cluster,1514,Halba'a,PHC,19.27265,42.09629,"19.27265,42.09629",Active,النماص,16/5,No,80
+Asir Health Cluster,1515,Hemeid Al-A'alaia,PHC,18.77401,41.91234,"18.77401,41.91234",Active,محايل,16/5,No,80
+Asir Health Cluster,1511,Juma'at Al-Mukatarah,PHC,19.05529,41.50867,"19.05529,41.50867",Active,بارق,16/5,No,80
+Asir Health Cluster,1593,Merabah Al-Sufla,PHC,17.8190964,42.3619402,"17.8190964,42.3619402",Active,أبها,16/5,No,80
+Bisha Health Affairs,1542,Sabt Al-A'alaia Health Sector,PHC,19.55776,41.95127,"19.55776,41.95127",Active,العلاية,16/5,No,80
+Asir Health Cluster,1526,Southern Khaybar,PHC,18.8036029,42.8622043,"18.8036029,42.8622043",Active,وادي بن هشبل,16/5,No,80
+Asir Health Cluster,1499,Tandaht Al-Zaylal,PHC,18.34604,42.84298,"18.34604,42.84298",Active,خميس مشيط,16/5,No,80
+Asir Health Cluster,1602,Wadi Al-Fidh,PHC,18.01363,43.46055,"18.01363,43.46055",Active,الحرجة,16/5,No,80
+Asir Health Cluster,1601,Wadi Al-Hayah,PHC,17.6129436,43.0561061,"17.6129436,43.0561061",Active,الفرشة,16/5,No,80
+Bisha Health Affairs,3770,West of Tasleet,PHC,19.567228,43.502544,"19.567228,43.502544",Active,تثليث,16/5,No,80
+Asir Health Cluster,2569,Al Hulami,PHC,18.03098,42.81848,"18.03098,42.81848",Active,أحد رفيدة,16/5,Yes,80
+Asir Health Cluster,2575,Al Sari',PHC,18.173427,42.628706,"18.173427,42.628706",Active,أبها,16/5,Yes,80
+Asir Health Cluster,2523,Al-A'aziziah,PHC,18.20875,42.49762,"18.20875,42.49762",Active,أبها,16/5,Yes,80
+Asir Health Cluster,1518,Al-Dhobbat District,PHC,18.29326,42.72567,"18.29326,42.72567",Active,خميس مشيط,16/5,Yes,80
+Bisha Health Affairs,2059,Al-Sanyah,PHC,20.02795,42.31029,"20.02795,42.31029",Active,الغربي,16/5,Yes,80
+Asir Health Cluster,639,Bahet Rabeia,PHC,18.341836,42.328872,"18.341836,42.328872",Active,أبها,16/5,Yes,80
+Asir Health Cluster,1546,Sarat Obeidah,PHC,18.08647,43.13855,"18.08647,43.13855",Active,سراة عبيدة,16/5,Yes,80
+Asir Health Cluster,2479,Al-Jorf,PHC,18.280141,42.2427981,"18.280141,42.2427981",Active,رجال ألمع,16/7,No,112
+Asir Health Cluster,2553,Al-Manhal,PHC,18.207302,42.51485,"18.207302,42.51485",Active,أبها,16/7,No,112
+Asir Health Cluster,1503,Tarban,PHC,19.1180942,41.6172302,"19.1180942,41.6172302",Active,المجاردة,16/7,No,112
+Asir Health Cluster,1567,Thahran Al-Janoub,PHC,17.6618929,43.5210871,"17.6618929,43.5210871",Active,ظهران الجنوب,16/7,No,112
+Asir Health Cluster,1504,Thalouth Al-Manthar,PHC,18.7992407,42.036978,"18.7992407,42.036978",Active,بارق,16/7,No,112
+Asir Health Cluster,1565,Trayb,PHC,18.5923585,43.2025766,"18.5923585,43.2025766",Active,المضة,16/7,No,112
+Asir Health Cluster,2578,Al Muftah,PHC,17.65906,43.32389,"17.65906,43.32389",Active,ظهران الجنوب,24/7,No,168
+Bisha Health Affairs,1576,Al-Amair,PHC,18.95737,43.62055,"18.95737,43.62055",Active,الأمواه,24/7,No,168
+Asir Health Cluster,2484,Al-Hubail,PHC,18.08995,42.22737,"18.08995,42.22737",Active,رجال ألمع,24/7,No,168
+Asir Health Cluster,3632,Al-Mansak,PHC,18.2075757,42.5617245,"18.2075757,42.5617245",Active,أبها,24/7,No,168
+Asir Health Cluster,1519,Al-Muwazafeen District,PHC,18.23608,42.60046,"18.23608,42.60046",Active,أبها,24/7,No,168
+Asir Health Cluster,2497,Al-Rabua'ah,PHC,17.5845001,43.3212624,"17.5845001,43.3212624",Active,ظهران الجنوب,24/7,No,168
+Asir Health Cluster,3453,Al-Rasras,PHC,18.26057,42.77318,"18.26057,42.77318",Active,خميس مشيط,24/7,No,168
+Asir Health Cluster,635,Al-Syna'ayah,PHC,18.3122506,42.6965618,"18.3122506,42.6965618",Active,خميس مشيط,24/7,No,168
+Asir Health Cluster,4117,A'rak Balahna,PHC,18.19783,42.82144,"18.19783,42.82144",Active,أحد رفيدة,24/7,No,168
+Asir Health Cluster,1487,Bahr Abu Sakinah,PHC,18.3312558,41.9034541,"18.3312558,41.9034541",Active,محايل,24/7,No,168
+Bisha Health Affairs,1493,Bani A'amro,PHC,19.3780066,42.0487011,"19.3780066,42.0487011",Active,العلاية,24/7,No,168
+Asir Health Cluster,1485,Bariq,PHC,18.925,41.93966,"18.925,41.93966",Active,بارق,24/7,No,168
+Asir Health Cluster,1591,Mahail,PHC,18.56904,42.03703,"18.56904,42.03703",Active,محايل,24/7,No,168
+Asir Health Cluster,1585,Qina,PHC,18.33208,41.97444,"18.33208,41.97444",Active,محايل,24/7,No,168
+Bisha Health Affairs,4478,RAWSHAN,PHC,20.00237,42.596421,"20.00237,42.596421",Active,المدينة,24/7,No,168
+Bisha Health Affairs,2053,Samkh,PHC,19.37058,42.80091,"19.37058,42.80091",Active,المدينة,24/7,No,168
+Bisha Health Affairs,1557,Shawas,PHC,19.869162,41.93387,"19.869162,41.93387",Active,البشاير,24/7,No,168
+Bisha Health Affairs,2066,South of Al-Madinah,PHC,19.97932,42.59275,"19.97932,42.59275",Active,المدينة,24/7,No,168
+Asir Health Cluster,2564,Um Sarar,PHC,18.3009393,42.7403623,"18.3009393,42.7403623",Active,خميس مشيط,24/7,No,168
+Asir Health Cluster,1604,Wadi BIN Habshil,PHC,18.59588,42.69248,"18.59588,42.69248",Active,وادي بن هشبل,24/7,No,168
+Asir Health Cluster,1490,Bilasmar,PHC,18.7742377,42.2465301,"18.7742377,42.2465301",Active,بللسمر,24/7,Yes,168
+Asir Health Cluster,1600,Nashyan,PHC,19.079926,42.137954,"19.079926,42.137954",Active,النماص,24/7,Yes,168
+Asir Health Cluster,1549,Sahl Tenomah,PHC,18.92834,42.18971,"18.92834,42.18971",Active,تنومه,24/7,Yes,168
+Asir Health Cluster,1559,Subh,PHC,18.6264819,42.3207951,"18.6264819,42.3207951",Active,بللحمر,24/7,Yes,168

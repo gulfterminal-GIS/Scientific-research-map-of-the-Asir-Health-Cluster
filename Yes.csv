@@ -1,12 +1,12 @@
-directorate_name,facility_cd,facility_name,facilitytype,latitude,longitude,Location,facility_status,Sector,working hours,Added in Summer Plan
-Asir Health Cluster,2569,Al Hulami,PHC,18.03098,42.81848,"18.03098,42.81848",Active,أحد رفيدة,16/5,Yes
-Asir Health Cluster,2575,Al Sari',PHC,18.173427,42.628706,"18.173427,42.628706",Active,أبها,16/5,Yes
-Asir Health Cluster,2523,Al-A'aziziah,PHC,18.20875,42.49762,"18.20875,42.49762",Active,أبها,16/5,Yes
-Asir Health Cluster,1518,Al-Dhobbat District,PHC,18.29326,42.72567,"18.29326,42.72567",Active,خميس مشيط,16/5,Yes
-Bisha Health Affairs,2059,Al-Sanyah,PHC,20.02795,42.31029,"20.02795,42.31029",Active,الغربي,16/5,Yes
-Asir Health Cluster,639,Bahet Rabeia,PHC,18.341836,42.328872,"18.341836,42.328872",Active,أبها,16/5,Yes
-Asir Health Cluster,1490,Bilasmar,PHC,18.7742377,42.2465301,"18.7742377,42.2465301",Active,بللسمر,24/7,Yes
-Asir Health Cluster,1600,Nashyan,PHC,19.079926,42.137954,"19.079926,42.137954",Active,النماص,24/7,Yes
-Asir Health Cluster,1549,Sahl Tenomah,PHC,18.92834,42.18971,"18.92834,42.18971",Active,تنومه,24/7,Yes
-Asir Health Cluster,1546,Sarat Obeidah,PHC,18.08647,43.13855,"18.08647,43.13855",Active,سراة عبيدة,16/5,Yes
-Asir Health Cluster,1559,Subh,PHC,18.6264819,42.3207951,"18.6264819,42.3207951",Active,بللحمر,24/7,Yes
+directorate_name,facility_cd,facility_name,facilitytype,latitude,longitude,Location,facility_status,Sector,working hours,Added in Summer Plan,Size
+Asir Health Cluster,2569,Al Hulami,PHC,18.03098,42.81848,"18.03098,42.81848",Active,أحد رفيدة,16/5,Yes,80
+Asir Health Cluster,2575,Al Sari',PHC,18.173427,42.628706,"18.173427,42.628706",Active,أبها,16/5,Yes,80
+Asir Health Cluster,2523,Al-A'aziziah,PHC,18.20875,42.49762,"18.20875,42.49762",Active,أبها,16/5,Yes,80
+Asir Health Cluster,1518,Al-Dhobbat District,PHC,18.29326,42.72567,"18.29326,42.72567",Active,خميس مشيط,16/5,Yes,80
+Bisha Health Affairs,2059,Al-Sanyah,PHC,20.02795,42.31029,"20.02795,42.31029",Active,الغربي,16/5,Yes,80
+Asir Health Cluster,639,Bahet Rabeia,PHC,18.341836,42.328872,"18.341836,42.328872",Active,أبها,16/5,Yes,80
+Asir Health Cluster,1546,Sarat Obeidah,PHC,18.08647,43.13855,"18.08647,43.13855",Active,سراة عبيدة,16/5,Yes,80
+Asir Health Cluster,1490,Bilasmar,PHC,18.7742377,42.2465301,"18.7742377,42.2465301",Active,بللسمر,24/7,Yes,168
+Asir Health Cluster,1600,Nashyan,PHC,19.079926,42.137954,"19.079926,42.137954",Active,النماص,24/7,Yes,168
+Asir Health Cluster,1549,Sahl Tenomah,PHC,18.92834,42.18971,"18.92834,42.18971",Active,تنومه,24/7,Yes,168
+Asir Health Cluster,1559,Subh,PHC,18.6264819,42.3207951,"18.6264819,42.3207951",Active,بللحمر,24/7,Yes,168
