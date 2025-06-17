@@ -790,6 +790,7 @@ async function addWidgets() {
     });
 
 
+
     var layerList = new LayerList({
       view: view,
       container: "layerListDiv",

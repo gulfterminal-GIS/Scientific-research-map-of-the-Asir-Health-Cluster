@@ -7,29 +7,35 @@ html, body {
     overflow: hidden; /* Prevent scrollbars */
 }
 
+/* Remove the viewDiv padding */
 #viewDiv {
     padding: 0 !important;
     margin: 0;
     height: 100% !important;
     width: 100% !important;
-    overflow: hidden; /* Prevent scrollbars */
+    overflow: hidden;
 }
 
 #sidePanel {
     position: absolute;
-    top: 20px;
+    top: 50%; /* Position from the middle */
     left: 20px;
-    height: calc(100% - 40px);
+    transform: translateY(-50%); /* Center vertically */
+    height: auto; /* Change to auto to fit content */
+    max-height: 600px; /* Add maximum height */
     width: 350px;
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 99;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
+/* Update the collapsed state */
 #sidePanel.collapsed {
-    transform: translateX(-330px);
+    transform: translate(-330px, -50%); /* Maintain vertical centering when collapsed */
 }
 
 /* No need for .expanded class anymore */
@@ -114,33 +120,104 @@ html, body {
     transform: rotate(180deg);
 }
 
+
+
+/* Update legend styles */
+.esri-legend {
+    height: auto !important;
+}
+
+.esri-legend__service {
+    padding: 0 !important;
+}
+
+/* Make legend items display in two columns */
+.esri-legend__layer-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.esri-legend__layer {
+  overflow: hidden;
+}
+
+
+.esri-legend__layer-row {
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+/* Adjust symbol size */
+.esri-legend__symbol {
+    width: 20px !important;
+    height: 20px !important;
+    margin-left: 5px !important;
+}
+
+/* Remove extra padding */
+.esri-legend__layer-caption {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
 #widgetContainer {
     padding: 15px;
-    height: calc(100% - 70px); /* Adjust for header height */
-    overflow-y: auto;
+    flex: 1;
+    overflow-y: hidden;
     position: relative;
     z-index: 99;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+.card:last-child {
+    flex: 0 !important; /* Remove flex growth */
+    margin-bottom: 0;
+}
+
+.card:last-child .card-body {
+    overflow: visible !important; /* Remove scroll */
+    padding: 10px;
+}
+
+/* Make legend title more compact */
+.esri-legend__service-label {
+    padding: 0 !important;
+    margin-bottom: 5px !important;
+    font-size: 1.15em !important;
+}
+
+.esri-legend__layer-cell--info {
+    font-size: 14px;
+}
 .card {
-    background-color: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
     transition: all 0.3s ease;
+        margin-bottom: 0.75rem; /* Reduce margin */
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .card:hover {
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
+.card-body {
+    padding: 0.75rem; /* Reduce padding */
+}
 
 /* Update these CSS rules */
 .sidebar-header {
-    padding: 15px;
+    padding: 10px 15px; /* Reduce padding */
     background: linear-gradient(45deg, rgba(33, 150, 243, 0.9), rgba(25, 118, 210, 0.9));
     color: white;
     border-radius: 10px 10px 0 0;
@@ -149,9 +226,9 @@ html, body {
 
 .sidebar-header h2 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.1em; /* Slightly smaller font */
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .feature-panel {
@@ -427,4 +504,29 @@ html, body {
 
 #widgetContainer::-webkit-scrollbar-thumb:hover {
     background: rgba(0,0,0,0.3);
+}
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    #sidePanel {
+        width: 300px; /* Slightly smaller on mobile */
+        height: 420px; /* Slightly smaller height on mobile */
+    }
+
+    #sidePanel.collapsed {
+        transform: translate(-280px, -50%);
+    }
+
+    .sidebar-header h2 {
+        font-size: 1em;
+    }
+
+    .card-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
 }
