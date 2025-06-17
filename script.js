@@ -17,7 +17,7 @@ function loadModule(moduleName) {
 
 async function initializeHeatMap() {
   try {
-    const [esriConfig, intl, Map, MapView, reactiveUtils, GeoJSONLayer, FeatureLayer, CSVLayer] =
+    const [esriConfig, intl, Map, MapView, reactiveUtils, GeoJSONLayer, FeatureLayer, CSVLayer, Feature] =
       await Promise.all([
         loadModule("esri/config"),
         loadModule("esri/intl"),
@@ -27,6 +27,7 @@ async function initializeHeatMap() {
         loadModule("esri/layers/GeoJSONLayer"),
         loadModule("esri/layers/FeatureLayer"),
         loadModule("esri/layers/CSVLayer"),
+        loadModule("esri/widgets/Feature"),
       ]);
 
     intl.setLocale("ar");
@@ -70,67 +71,203 @@ async function initializeHeatMap() {
     });
 
 
-    // let layer01 = new GeoJSONLayer({
-    //   url: "https://raw.githubusercontent.com/ashrafayman219/rejected-heatmap/refs/heads/main/new.json",
-    //   title: "البيانات الوصفية",
-    //   popupTemplate: {
-    //     title: "{الامانة}, {البلدية}",
-    //     content: [
-    //       {
-    //         type: "fields",
-    //         fieldInfos: [
-    //           {
-    //             fieldName: "رقم_الزيارة",
-    //             label: "رقم_الزيارة",
-    //           },
-    //           {
-    //             fieldName: "اسم_المراقب",
-    //             label: "اسم المراقب",
-    //           },
-    //           {
-    //             fieldName: "هوية_المراقب",
-    //             label: "هوية المراقب",
-    //           },
-    //           {
-    //             fieldName: "تاريخ_ووقت_الاسناد",
-    //             label: "تاريخ ووقت الاسناد",
-    //           },
-    //           {
-    //             fieldName: "نوع_الرقابة",
-    //             label: "نوع الرقابة",
-    //           },
-    //           {
-    //             fieldName: "حالة_الزيارة",
-    //             label: "حالة الزيارة",
-    //           },
-    //           {
-    //             fieldName: "نوع_الزيارة",
-    //             label: "نوع_الزيارة",
-    //           },
-    //           {
-    //             fieldName: "اسم_المراجع",
-    //             label: "اسم_المراجع",
-    //           },
-    //           {
-    //             fieldName: "اسم_المعتمد",
-    //             label: "اسم_المعتمد",
-    //           },
-    //           {
-    //             fieldName: "اسم_النشاط_التفصيلي",
-    //             label: "اسم النشاط التفصيلي",
-    //           },
-    //           {
-    //             fieldName: "رقم_الزيارة",
-    //             label: "رقم_الزيارة",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    //   renderer: renderer,
-    //   labelsVisible: true,
+    // // Add HTML for feature panel
+    // const featurePanel = document.createElement('div');
+    // featurePanel.id = 'featurePanel';
+    // featurePanel.className = 'feature-panel esri-widget';
+    // document.body.appendChild(featurePanel);
+
+    // // Add CSS
+    // const style = document.createElement('style');
+    // style.textContent = `
+    //   .feature-panel {
+    //     position: absolute;
+    //     top: 20px;
+    //     right: 20px;
+    //     width: 300px;
+    //     background: white;
+    //     border-radius: 8px;
+    //     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    //     padding: 15px;
+    //     z-index: 1000;
+    //     display: none;
+    //     max-height: 400px;
+    //     overflow-y: auto;
+    //   }
+
+    //   .feature-panel.visible {
+    //     display: block;
+    //   }
+
+    //   .feature-content {
+    //     margin-bottom: 15px;
+    //   }
+
+    //   .feature-title {
+    //     font-size: 1.2em;
+    //     font-weight: bold;
+    //     color: #2196F3;
+    //     margin-bottom: 10px;
+    //   }
+
+    //   .feature-detail {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     margin: 5px 0;
+    //     padding: 5px 0;
+    //     border-bottom: 1px solid #eee;
+    //   }
+
+    //   .feature-label {
+    //     font-weight: 500;
+    //     color: #666;
+    //   }
+
+    //   .feature-value {
+    //     color: #333;
+    //   }
+    // `;
+    // document.head.appendChild(style);
+
+    // // Create Feature widget
+    // const featureWidget = new Feature({
+    //   container: featurePanel,
+    //   map: map,
+    //   spatialReference: view.spatialReference
     // });
-    // map.add(layer01);
+
+
+// Create a single shared feature panel at the start
+function createSharedFeaturePanel() {
+    const existingPanel = document.querySelector('.feature-panel');
+    if (existingPanel) {
+        existingPanel.remove();
+    }
+
+    const featurePanel = document.createElement('div');
+    featurePanel.className = 'feature-panel';
+    featurePanel.innerHTML = `
+        <button class="feature-close-btn">
+            <i class="material-icons-round">close</i>
+        </button>
+        <div class="feature-content"></div>
+    `;
+    document.body.appendChild(featurePanel);
+
+    const closeBtn = featurePanel.querySelector('.feature-close-btn');
+    closeBtn.addEventListener('click', () => {
+        featurePanel.classList.remove('visible');
+        // Remove any existing highlights
+        if (window.currentHighlight) {
+            window.currentHighlight.remove();
+        }
+        view.container.classList.remove('clickable');
+    });
+
+    return featurePanel;
+}
+
+
+
+// Modified layerConfig
+const layerConfig = {
+    handlePointerEvents: (layer) => {
+      // Use shared feature panel
+      const featurePanel = document.querySelector('.feature-panel') || createSharedFeaturePanel();
+
+      // Update the updateFeaturePanel function in layerConfig
+      const updateFeaturePanel = async (feature, layerView) => {
+          try {
+              const content = `
+                  <div class="feature-title">${feature.attributes.facility_name}</div>
+                  <div class="feature-detail">
+                      <span class="feature-label">المديرية:</span>
+                      <span class="feature-value">${feature.attributes.directorate_name}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">القطاع:</span>
+                      <span class="feature-value">${feature.attributes.Sector}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">نوع المنشأة:</span>
+                      <span class="feature-value">${feature.attributes.facilitytype}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">ساعات العمل:</span>
+                      <span class="feature-value">${feature.attributes['working hours']}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">خط الطول:</span>
+                      <span class="feature-value">${feature.attributes.longitude}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">دائرة العرض:</span>
+                      <span class="feature-value">${feature.attributes.latitude}</span>
+                  </div>
+                  <div class="feature-detail">
+                      <span class="feature-label">الحجم:</span>
+                      <span class="feature-value">${feature.attributes.Size}</span>
+                  </div>
+              `;
+
+              const contentDiv = featurePanel.querySelector('.feature-content');
+              if (contentDiv) {
+                  contentDiv.innerHTML = content;
+                  featurePanel.classList.add('visible');
+              }
+
+              // Update highlight
+              if (window.currentHighlight) {
+                  window.currentHighlight.remove();
+              }
+              window.currentHighlight = layerView.highlight(feature);
+          } catch (error) {
+              console.error('Error updating feature panel:', error);
+          }
+      };
+
+      // Handle pointer movement
+      view.on("pointer-move", async (event) => {
+          try {
+              const hitTest = await view.hitTest(event, {
+                  include: [layer02, layer03] // Include both layers in hit testing
+              });
+
+              const result = hitTest.results[0];
+              if (result) {
+                  view.container.classList.add('clickable');
+                  const feature = result.graphic;
+                  const layerView = await view.whenLayerView(result.graphic.layer);
+                  await updateFeaturePanel(feature, layerView);
+              } else {
+                  view.container.classList.remove('clickable');
+              }
+          } catch (error) {
+              console.error('Error in pointer-move event:', error);
+          }
+      });
+
+      // Handle click events for Google Maps
+      view.on("click", async (event) => {
+          try {
+              const hitTest = await view.hitTest(event, {
+                  include: [layer02, layer03] // Include both layers in hit testing
+              });
+
+              const result = hitTest.results[0];
+              if (result) {
+                  const feature = result.graphic;
+                  const lat = feature.attributes.latitude;
+                  const lon = feature.attributes.longitude;
+                  window.open(`https://www.google.com/maps?q=${lat},${lon}`, '_blank');
+              }
+          } catch (error) {
+              console.error('Error in click event:', error);
+          }
+      });
+    }
+};
+
 
 
     const colors = ["#33bbff", "#33ff39", "#c27c30", "#7f3dcf"];
@@ -302,7 +439,67 @@ async function initializeHeatMap() {
       labelsVisible: true,
       visible: false
     });
-    map.add(layer01);  // adds the layer to the map
+    // map.add(layer01);  // adds the layer to the map
+
+    const layer03 = new CSVLayer({
+      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/No.csv",
+      copyright: "No",
+      title: "لم تتم إضافته في خطة الصيف",
+      popupTemplate: {
+        title: "{facility_name}",
+        content: [
+          {
+            type: "fields",
+            fieldInfos: [
+              {
+                fieldName: "directorate_name",
+                label: "اسم المديرية",
+              },
+              {
+                fieldName: "Sector",
+                label: "القطاع",
+              },
+              {
+                fieldName: "longitude",
+                label: "خط الطول",
+              },
+              {
+                fieldName: "latitude",
+                label: "دائرة العرض",
+              },
+              {
+                fieldName: "facilitytype",
+                label: "نوع المنشأة",
+              },
+              {
+                fieldName: "Size",
+                label: "الحجم",
+              },
+              {
+                fieldName: "working hours",
+                label: "ساعات العمل",
+              },
+            ],
+          },
+        ],
+      },
+      labelsVisible: true,
+      // featureReduction: clusterConfig,
+      // visible: false,
+      renderer: {
+        type: "simple",
+        field: "mag",
+        symbol: {
+          type: "picture-marker",
+          url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/output-onlinepngtools.png",
+          width: "21px",
+          height: "21px"
+        }
+      },
+    });
+    map.add(layer03);  // adds the layer to the map
+
+
 
     const layer02 = new CSVLayer({
       url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/Yes.csv",
@@ -362,82 +559,52 @@ async function initializeHeatMap() {
       labelsVisible: true,
       // featureReduction: clusterConfig,
       // visible: false,
-      renderer: sizeRenderer,
+      renderer: {
+        type: "simple",
+        field: "mag",
+        symbol: {
+          type: "picture-marker",
+          url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/4553011.png",
+          width: "21px",
+          height: "21px"
+        }
+      },
     });
     map.add(layer02);  // adds the layer to the map
+    layerConfig.handlePointerEvents(layer02);
+    
 
-    const layer03 = new CSVLayer({
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/No.csv",
-      copyright: "No",
-      title: "لم تتم إضافته في خطة الصيف",
-      popupTemplate: {
-        title: "{facility_name}",
-        content: [
-          {
-            type: "fields",
-            fieldInfos: [
-              {
-                fieldName: "directorate_name",
-                label: "اسم المديرية",
-              },
-              {
-                fieldName: "Sector",
-                label: "القطاع",
-              },
-              {
-                fieldName: "longitude",
-                label: "خط الطول",
-              },
-              {
-                fieldName: "latitude",
-                label: "دائرة العرض",
-              },
-              {
-                fieldName: "facilitytype",
-                label: "نوع المنشأة",
-              },
-              {
-                fieldName: "Size",
-                label: "الحجم",
-              },
-              {
-                fieldName: "working hours",
-                label: "ساعات العمل",
-              },
-            ],
-          },
-        ],
-      },
-      // renderer: {
-      //   type: "simple",
-      //   field: "mag",
-      //   symbol: {
-      //     type: "simple-marker",
-      //     size: 4,
-      //     color: "#69dcff",
-      //     outline: {
-      //       color: "rgba(0, 139, 174, 0.5)",
-      //       width: 5
-      //     }
-      //   }
-      // },
-      labelsVisible: true,
-      // featureReduction: clusterConfig,
-      // visible: false,
-      renderer: sizeRenderer,
+
+    // Update the mouseleave event listener in your initializeHeatMap function
+    const mapContainer = view.container;
+    mapContainer.addEventListener('mouseleave', () => {
+        const panel = document.querySelector('.feature-panel');
+        if (panel) {
+            panel.classList.remove('visible');
+        }
     });
-    map.add(layer03);  // adds the layer to the map
+
+
+
+    // Initialize sector filter after layers are added
+    Promise.all([
+        view.whenLayerView(layer02),
+        view.whenLayerView(layer03)
+    ]).then(() => {
+        initializeSectorFilter([layer02, layer03]);
+    });
+
 
 
     Promise.all([
-      view.whenLayerView(layer01),
+      // view.whenLayerView(layer01),
       view.whenLayerView(layer02),
       view.whenLayerView(layer03),
       // view.whenLayerView(fLayer2)
-    ]).then(([layerView1, layerView2, layerView3]) => {
+    ]).then(([layerView2, layerView3]) => {
       return Promise.all(
         [
-          reactiveUtils.whenOnce(() => !layerView1.updating),
+          // reactiveUtils.whenOnce(() => !layerView1.updating),
           reactiveUtils.whenOnce(() => !layerView2.updating),
           reactiveUtils.whenOnce(() => !layerView3.updating),
           // reactiveUtils.whenOnce(() => !layerView2.updating)
@@ -447,7 +614,7 @@ async function initializeHeatMap() {
       console.log("done updating")
       view.goTo(
         {
-          target: layer01.fullExtent,
+          target: layer02.fullExtent,
         },
         {
           duration: 2000,
@@ -764,4 +931,53 @@ function toggleLoading(show) {
             loader.classList.add('d-none');
         }
     }
+}
+
+function initializeSectorFilter(layers) {
+    const sectorFilter = document.getElementById('sectorFilter');
+    
+    sectorFilter.addEventListener('change', async (e) => {
+        const selectedSector = e.target.value;
+        toggleLoading(true);
+        
+        try {
+            layers.forEach(layer => {
+                if (selectedSector === 'all') {
+                    layer.definitionExpression = null;
+                } else {
+                    layer.definitionExpression = `Sector = '${selectedSector}'`;
+                }
+            });
+
+            // Wait for the layer view update
+            await Promise.all(layers.map(layer => view.whenLayerView(layer)));
+
+            // Get the extent of filtered features
+            const filteredExtent = await getFilteredFeaturesExtent(layers[0], selectedSector);
+            
+            if (filteredExtent) {
+                await view.goTo({
+                    target: filteredExtent.expand(1.5),
+                    duration: 1000,
+                    easing: "ease-out"
+                });
+            }
+        } catch (error) {
+            console.error('Error in sector filter:', error);
+        } finally {
+            toggleLoading(false);
+        }
+    });
+}
+
+// Helper function to get filtered features extent
+async function getFilteredFeaturesExtent(layer, sector) {
+    if (sector === 'all') {
+        return layer.fullExtent;
+    }
+
+    const query = layer.createQuery();
+    query.where = `Sector = '${sector}'`;
+    const result = await layer.queryExtent(query);
+    return result.extent;
 }

@@ -1,64 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>PHCs Map</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- ArcGIS CSS -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://js.arcgis.com/4.31/"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>PHCs Map</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ArcGIS CSS -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/light/main.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://js.arcgis.com/4.31/"></script>
 </head>
+
 <body>
-        <div id="sidePanel" class="shadow">
-        <div id="toggleButton" class="btn btn-light shadow-sm">
-            <i class="material-icons-round toggle-icon">chevron_left</i>
-        </div>
-        <div id="widgetContainer">
-            <div class="card mb-3">
-                <div class="card-header bg-primary text-white d-flex align-items-center">
-                    <span class="material-icons-round me-2">search</span>
-                    <span>البحث</span>
-                </div>
-                <div class="card-body">
-                    <div id="searchDiv"></div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-header bg-primary text-white d-flex align-items-center">
-                    <span class="material-icons-round me-2">layers</span>
-                    <span>الطبقات</span>
-                </div>
-                <div class="card-body">
-                    <div id="layerListDiv"></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header bg-primary text-white d-flex align-items-center">
-                    <span class="material-icons-round me-2">legend_toggle</span>
-                    <span>وسيلة الإيضاح</span>
-                </div>
-                <div class="card-body">
-                    <div id="legendDiv"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="viewDiv"></div>
-    <div id="loadingIndicator" class="loading-indicator d-none">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
+  <div id="sidePanel" class="shadow">
+    <div class="sidebar-header">
+        <h2>خريطة المراكز الصحية بتجمع عسير الصحي</h2>
     </div>
 
+    <div id="toggleButton" class="btn btn-light shadow-sm">
+      <i class="material-icons-round toggle-icon">chevron_left</i>
+    </div>
+    <div id="widgetContainer">
+      <div class="card mb-3">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+          <span class="material-icons-round me-2">search</span>
+          <span>البحث</span>
+        </div>
+        <div class="card-body">
+          <div id="searchDiv"></div>
+        </div>
+      </div>
 
-    <script type="module" src="script.js"></script>
+      <!-- Add this new section above the layerList div -->
+      <div class="card mb-3">
+          <div class="card-header bg-primary text-white d-flex align-items-center">
+              <span class="material-icons-round me-2">filter_alt</span>
+              <span>تصفية القطاعات</span>
+          </div>
+          <div class="card-body">
+              <select id="sectorFilter" class="form-select">
+                  <option value="all">جميع القطاعات</option>
+                  <option value="أبها">أبها</option>
+                  <option value="أحد رفيدة">أحد رفيدة</option>
+                  <option value="الأمواه">الأمواه</option>
+                  <option value="البرك">البرك</option>
+                  <option value="البشاير">البشاير</option>
+                  <option value="الجنوبي">الجنوبي</option>
+                  <option value="الشمالي">الشمالي</option>
+                  <option value="الحرجة">الحرجة</option>
+                  <option value="العلاية">العلاية</option>
+                  <option value="الغربي">الغربي</option>
+                  <option value="الفرشة">الفرشة</option>
+                  <option value="القحمة">القحمة</option>
+                  <option value="المجاردة">المجاردة</option>
+                  <option value="المدينة">المدينة</option>
+                  <option value="النماص">النماص</option>
+                  <option value="المضة">المضة</option>
+                  <option value="بللحمر">بللحمر</option>
+                  <option value="بارق">بارق</option>
+                  <option value="تنومه">تنومه</option>
+                  <option value="تثليث">تثليث</option>
+                  <option value="بللسمر">بللسمر</option>
+                  <option value="سراة عبيدة">سراة عبيدة</option>
+                  <option value="رجال ألمع">رجال ألمع</option>
+                  <option value="خميس مشيط">خميس مشيط</option>
+                  <option value="وادي بن هشبل">وادي بن هشبل</option>
+                  <option value="محايل">محايل</option>
+                  <option value="ظهران الجنوب">ظهران الجنوب</option>
+              </select>
+          </div>
+      </div>
+
+
+      <div class="card mb-3">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+          <span class="material-icons-round me-2">layers</span>
+          <span>الطبقات</span>
+        </div>
+        <div class="card-body">
+          <div id="layerListDiv"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+          <span class="material-icons-round me-2">legend_toggle</span>
+          <span>وسيلة الإيضاح</span>
+        </div>
+        <div class="card-body">
+          <div id="legendDiv"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="viewDiv"></div>
+  <div id="loadingIndicator" class="loading-indicator d-none">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+  <script type="module" src="script.js"></script>
 </body>
+
 </html>
