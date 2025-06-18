@@ -60,279 +60,541 @@ async function initializeHeatMap() {
     featureContainer.className = 'esri-widget';
     document.body.appendChild(featureContainer);
 
-    // Add CSS
-    const style = document.createElement('style');
-    style.textContent = `
-    #feature-container {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 300px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 15px;
-        z-index: 1000;
-        display: none;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
 
-    #feature-container.visible {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
 
-    .feature-detail {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
-    }
 
-    .google-maps-btn {
-        background: #4285f4;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
-    }
+const layerConfig = {
+    handlePointerEvents: () => {
+        let currentHighlight = null;
+        const featureContainer = document.getElementById('feature-container') || 
+            createFeatureContainer();
 
-    .google-maps-btn:hover {
-        background: #3367d6;
-    }
-`;
-    document.head.appendChild(style);
+        view.on("click", async (event) => {
+            try {
+                if (currentHighlight) {
+                    currentHighlight.remove();
+                    currentHighlight = null;
+                }
 
-    // Updated layerConfig
-    const layerConfig = {
-      handlePointerEvents: () => {
-        let highlight;
-        let currentFeature = null;
+                const hitTest = await view.hitTest(event, {
+                    include: [layer02]
+                });
 
-        const updateFeatureDisplay = async (feature, layerView) => {
-          try {
-            if (highlight) {
-              highlight.remove();
+                const result = hitTest.results[0];
+                if (result) {
+                    const feature = result.graphic;
+                    const layerView = await view.whenLayerView(layer02);
+                    currentHighlight = layerView.highlight(feature);
+                    updateFeatureDisplay(feature, featureContainer, currentHighlight);
+                } else {
+                    featureContainer.classList.remove('visible');
+                }
+            } catch (error) {
+                console.error("Error in click handler:", error);
             }
+        });
+    }
+};
 
-            highlight = layerView.highlight(feature);
 
-            const content = `
-                    <div class="feature-title" style="font-size: 1.2em; font-weight: bold; color:rgb(80, 84, 87); margin-bottom: 15px;">
-                        ${feature.attributes.facility_name}
+
+// Add touch handling for mobile (optional)
+function addTouchHandling(container) {
+    let startY;
+    let startHeight;
+    const minHeight = 30; // Minimum height in vh
+    const maxHeight = 70; // Maximum height in vh
+
+    container.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        startY = touch.clientY;
+        startHeight = container.offsetHeight;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        const deltaY = touch.clientY - startY;
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, (startHeight - deltaY) / window.innerHeight * 100));
+        container.style.height = `${newHeight}vh`;
+    });
+
+    container.addEventListener('touchend', () => {
+        // Snap to either expanded or collapsed state
+        const currentHeight = (container.offsetHeight / window.innerHeight) * 100;
+        container.style.height = `${currentHeight > 50 ? maxHeight : minHeight}vh`;
+    });
+}
+
+
+
+// Update your createFeatureContainer function
+function createFeatureContainer() {
+    const container = document.createElement('div');
+    container.id = 'feature-container';
+    container.className = 'feature-panel';
+    document.body.appendChild(container);
+    addTouchHandling(container); // Add touch handling
+    return container;
+}
+
+// Enhanced updateFeatureDisplay function
+function updateFeatureDisplay(feature, container, highlight) {
+    const content = `
+        <div class="feature-card">
+            <div class="feature-card-header">
+                <div class="facility-icon">
+                    <i class="fas fa-hospital-alt"></i>
+                </div>
+                <h3 class="facility-name">${feature.attributes.facility_name}</h3>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="feature-card-body">
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-building"></i>
                     </div>
-                    <div class="feature-detail">
-                        <span>المديرية:</span>
-                        <span>${feature.attributes.directorate_name}</span>
+                    <div class="info-content">
+                        <label>نوع المنشأة</label>
+                        <span>${feature.attributes.facility_type}</span>
                     </div>
-                    <div class="feature-detail">
-                        <span>القطاع:</span>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <label>المدينة</label>
                         <span>${feature.attributes.Sector}</span>
                     </div>
-                    <div class="feature-detail">
-                        <span>نوع المنشأة:</span>
-                        <span>${feature.attributes.facilitytype}</span>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div class="feature-detail">
-                        <span>ساعات العمل:</span>
-                        <span>${feature.attributes.Size == 40 ? "8" :
-                feature.attributes.Size == "80" ? "16/5" :
-                  feature.attributes.Size == "112" ? "16/7" :
-                    feature.attributes.Size == "168" ? "24/7" : "-"
-              }</span>
+                    <div class="info-content">
+                        <label>ساعات العمل</label>
+                        <span>${getWorkingHours(feature.attributes.Size)}</span>
                     </div>
-                    <div class="feature-detail">
-                        <span>خط الطول:</span>
-                        <span>${feature.attributes.longitude}</span>
-                    </div>
-                    <div class="feature-detail">
-                        <span>دائرة العرض:</span>
-                        <span>${feature.attributes.latitude}</span>
-                    </div>
-                    <div class="feature-detail">
-                        <span>الحجم:</span>
-                        <span>${feature.attributes.Size}</span>
-                    </div>
-                    `;
-            // <button class="google-maps-btn" onclick="window.open('https://www.google.com/maps?q=${feature.attributes.latitude},${feature.attributes.longitude}', '_blank')">
-            //     فتح في خرائط Google
-            // </button>
+                </div>
+            </div>
 
-            featureContainer.innerHTML = content;
-            featureContainer.classList.add('visible');
-            view.container.classList.add('clickable');
-          } catch (error) {
-            console.error('Error updating feature display:', error);
-          }
-        };
+            <div class="feature-card-footer">
+                <button class="maps-btn" onclick="window.open('https://www.google.com/maps?q=${feature.attributes.latitude},${feature.attributes.longitude}', '_blank')">
+                    <i class="fas fa-map-marked-alt"></i>
+                    فتح في خرائط Google
+                </button>
+            </div>
+        </div>
+    `;
 
-        const clearHighlight = () => {
-          if (highlight) {
-            highlight.remove();
-            highlight = null;
-          }
-          featureContainer.classList.remove('visible');
-          view.container.classList.remove('clickable');
-          currentFeature = null;
-        };
+    container.innerHTML = content;
+    container.classList.add('visible');
 
-        // Create promises for both layer views
-        Promise.all([
-          view.whenLayerView(layer02),
-          // view.whenLayerView(layer03)
-        ]).then(([layerView02]) => {
-          const debouncedUpdate = promiseUtils.debounce(async (event) => {
-            try {
-              const hitTest = await view.hitTest(event, {
-                include: [layer02]
-              });
-
-              const result = hitTest.results[0];
-
-              if (result) {
-                const feature = result.graphic;
-                const layerView = layerView02;
-
-                // Only update if it's a different feature
-                if (!currentFeature || currentFeature.attributes.OBJECTID !== feature.attributes.OBJECTID) {
-                  currentFeature = feature;
-                  await updateFeatureDisplay(feature, layerView);
-                }
-              } else if (!featureContainer.matches(':hover')) {
-                clearHighlight();
-              }
-            } catch (error) {
-              if (!promiseUtils.isAbortError(error)) {
-                console.error('Error in hover handling:', error);
-              }
+    // Update close button functionality
+    // Update close button functionality with proper cleanup
+    const closeBtn = container.querySelector('.close-btn');
+    closeBtn.addEventListener('click', () => {
+        // Add closing animation class
+        container.style.transform = 'translateY(100%)';
+        container.style.opacity = '0';
+        
+        setTimeout(() => {
+            container.classList.remove('visible');
+            container.style.transform = ''; // Reset transform
+            container.style.opacity = ''; // Reset opacity
+            if (highlight) {
+                highlight.remove();
             }
-          });
+        }, 400);
+    });
+}
 
-          // Handle pointer movement
-          view.on("pointer-move", (event) => {
-            debouncedUpdate(event).catch((err) => {
-              if (!promiseUtils.isAbortError(err)) {
-                throw err;
-              }
-            });
-          });
+// Add this CSS
+const combinedStyles = `
 
-          // Update the click handler in layerConfig
-          view.on("click", async (event) => {
-            try {
-              const hitTest = await view.hitTest(event, {
-                include: [layer02]
-              });
+#feature-container {
+    position: fixed; /* Change to fixed for better mobile positioning */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Full width */
+    height: 30vh; /* 30% of viewport height */
+    background: transparent !important;
+    z-index: 1000;
+    display: none;
+    transform: translateY(100%); /* Start from below the screen */
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none; /* Allow clicks to pass through the container */
+}
 
-              const result = hitTest.results[0];
-              if (result) {
-                const feature = result.graphic;
-                const layerView = layerView02;
-
-                // Update the feature display
-                currentFeature = feature;
-                await updateFeatureDisplay(feature, layerView);
-
-                // Open Google Maps
-                window.open(`https://www.google.com/maps?q=${feature.attributes.latitude},${feature.attributes.longitude}`, '_blank');
-              }
-            } catch (error) {
-              console.error('Error in click event:', error);
-            }
-          });
+#feature-container.visible {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
 
 
-        });
+.feature-panel {
+    position: absolute;
+    bottom: 20px; /* Changed from top to bottom */
+    right: 20px;
+    width: 320px;
+    background: transparent !important; /* Force transparency */
+    box-shadow: none !important; /* Remove shadow */
+    z-index: 1000;
+    display: none;
+    transform: translateY(100%); /* Start from below */
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        // Handle map container mouse leave
-        view.container.addEventListener('mouseleave', () => {
-          if (!featureContainer.matches(':hover')) {
-            clearHighlight();
+.feature-panel.visible {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.feature-card {
+    position: relative;
+    background: white;
+    border-radius: 20px 20px 0 0; /* Rounded corners only on top */
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+    pointer-events: auto; /* Re-enable pointer events for the card */
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.feature-card-header {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Add a drag handle indicator */
+.feature-card-header::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.facility-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.facility-name {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.feature-card-body {
+    padding: 15px 20px;
+    background: transparent;
+    overflow-y: auto;
+    max-height: calc(100% - 140px); /* Adjust based on header and footer height */
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(238, 242, 247, 0.5);
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row:hover {
+    background: transparent;
+    transform: translateX(-5px);
+}
+
+.info-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(227, 242, 253, 0.7);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2196F3;
+}
+
+.info-content {
+    flex-grow: 1;
+}
+
+.info-content label {
+    display: block;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.info-content span {
+    display: block;
+    color: #333;
+    font-weight: 500;
+}
+
+.feature-card-footer {
+    padding: 15px 20px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.maps-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.maps-btn:hover {
+    background: #3367d6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+}
+
+.maps-btn i {
+    font-size: 1.1em;
+}
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+    #feature-container {
+        height: 40vh; /* Slightly taller on mobile */
+    }
+
+    .feature-card-body {
+        padding: 12px 15px;
+    }
+
+    .info-row {
+        padding: 10px 0;
+    }
+}
+    .custom-alert {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        background: #f8f9fa;
+        color: #2c3e50;
+        padding: 16px 24px;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.95em;
+        min-width: 300px;
+        max-width: 90%;
+    }
+
+    .custom-alert.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    .custom-alert i {
+        font-size: 1.2em;
+    }
+
+    @keyframes alertShake {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        25% { transform: translateX(-53%) translateY(0); }
+        75% { transform: translateX(-47%) translateY(0); }
+    }
+
+    .custom-alert.shake {
+        animation: alertShake 0.5s ease-in-out;
+    }
+
+`;
+
+// Apply the styles
+if (!document.getElementById('feature-panel-styles')) {
+    const styleSheet = document.createElement('style');
+    styleSheet.id = 'feature-panel-styles';
+    styleSheet.textContent = combinedStyles;
+    document.head.appendChild(styleSheet);
+}
+
+
+
+
+
+function getWorkingHours(size) {
+    const hoursMap = {
+        "4": "٨ص - ١١:٥٩م الأحد - الخميس",
+        "4A": "٨ص - ١١:٥٩م جميع أيام الأسبوع",
+        "8": "٨ص - ٤م الأحد - الخميس",
+        "24": "٢٤ ساعة جميع أيام الأسبوع"
+    };
+    return hoursMap[size] || "-";
+}
+
+
+
+
+
+
+
+
+    const geojsonlayer = new GeoJSONLayer({
+      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/Aseer01.geojson",
+      copyright: "Aseer",
+      legendEnabled: false,
+      title: "Aseer",
+      renderer: {
+        type: "simple", // autocasts as new SimpleRenderer()
+        symbol: {
+          type: "simple-fill", // autocasts as new SimpleFillSymbol()
+          color: [51,51,204,0.2],
+          style: "solid",
+          outline: {
+            // makes the outlines of all features consistently light gray
+            color: "green",
+            width: 3
           }
-        });
-
-        // Keep highlight when hovering over feature container
-        featureContainer.addEventListener('mouseenter', () => {
-          if (currentFeature) {
-            featureContainer.classList.add('visible');
-          }
-        });
-
-        featureContainer.addEventListener('mouseleave', () => {
-          if (!view.container.matches(':hover')) {
-            clearHighlight();
-          }
-        });
+        }
       }
+    });
+    map.add(geojsonlayer);  // adds the layer to the map
+
+
+
+
+    const hours8 = {
+      type: "simple-marker",
+      size: 5,
+      color: [48, 152, 201],
+      // outline: null
     };
 
-
-
-
-
-    const hours40 = {
-      type: "picture-marker",
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/4553011.png",
-      width: "21px",
-      height: "21px",
+    const hours4A = {
+      type: "simple-marker",
+      size: 7,
+      color: [77, 161, 116],
+      // outline: null
     };
 
-    const hours80 = {
-      type: "picture-marker",
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/yellow.png",
-      width: "21px",
-      height: "21px",
+    const hours4 = {
+      type: "simple-marker",
+      size: 8,
+      color: [255, 147, 0],
+      // outline: null
     };
 
-    const hours112 = {
-      type: "picture-marker",
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/gray.png",
-      width: "21px",
-      height: "21px",
-    };
-
-    const hours168 = {
-      type: "picture-marker",
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/output-onlinepngtools.png",
-      width: "21px",
-      height: "21px",
+    const hours24 = {
+      type: "simple-marker",
+      size: 9,
+      color: [150, 100, 100],
+      // outline: {
+      //   width: 2,
+      //   color: "gray"
+      // }
     };
 
     const sizeRenderer = {
-      type: "unique-value", // autocasts as new UniqueValueRenderer()
+      type: "unique-value",
       legendOptions: {
         title: "التصنيف تبعاً لعدد ساعات العمل"
       },
       field: "Size",
       uniqueValueInfos: [
         {
-          value: 40,
-          symbol: hours40,
-          label: "8"
+          value: "8",
+          symbol: hours8,
+          label: "٨ص - ٤م الأحد - الخميس"
         },
         {
-          value: "80",
-          symbol: hours80,
-          label: "16/5"
+          value: "40",
+          symbol: hours4A,
+          label: "٨ص - ١١:٥٩م جميع أيام الأسبوع"
         },
         {
-          value: "112",
-          symbol: hours112,
-          label: "16/7"
+          value: "4",
+          symbol: hours4,
+          label: "٨ص - ١١:٥٩م الأحد - الخميس"
         },
         {
-          value: "168",
-          symbol: hours168,
-          label: "24/7"
-        }
+          value: "24",
+          symbol: hours24,
+          label: "٢٤ ساعة جميع أيام الأسبوع"
+        },
       ]
     };
 
@@ -495,47 +757,35 @@ async function initializeHeatMap() {
 
 
     const layer02 = new CSVLayer({
-      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/Health%20Cluster%20in%20Asir.csv",
+      url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/Health%20Cluster%20in%20Asir02.csv",
       copyright: "Health Cluster in Asir",
       title: "التجمع الصحي في عسير",
-      popupTemplate: {
-        title: "{facility_name}",
-        content: [
-          {
-            type: "fields",
-            fieldInfos: [
-              {
-                fieldName: "directorate_name",
-                label: "اسم المديرية",
-              },
-              {
-                fieldName: "Sector",
-                label: "القطاع",
-              },
-              {
-                fieldName: "longitude",
-                label: "خط الطول",
-              },
-              {
-                fieldName: "latitude",
-                label: "دائرة العرض",
-              },
-              {
-                fieldName: "facilitytype",
-                label: "نوع المنشأة",
-              },
-              {
-                fieldName: "Size",
-                label: "الحجم",
-              },
-              {
-                fieldName: "working hours",
-                label: "ساعات العمل",
-              },
-            ],
-          },
-        ],
-      },
+      // popupTemplate: {
+      //   title: "{facility_name}",
+      //   content: [
+      //     {
+      //       type: "fields",
+      //       fieldInfos: [
+      //         {
+      //           fieldName: "facility_type",
+      //           label: "نوع المنشأة",
+      //         },
+      //         {
+      //           fieldName: "Sector",
+      //           label: "المدينة",
+      //         },
+      //         {
+      //           fieldName: "working hours",
+      //           label: "ساعات العمل",
+      //         },
+      //         {
+      //           fieldName: "Location",
+      //           label: "موقع المنشأة",
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
       // renderer: {
       //   type: "simple",
       //   field: "mag",
@@ -557,30 +807,17 @@ async function initializeHeatMap() {
     map.add(layer02);  // adds the layer to the map
 
 
-
     layerConfig.handlePointerEvents();
 
-
-
-    // Update the mouseleave event listener in your initializeHeatMap function
-    const mapContainer = view.container;
-    mapContainer.addEventListener('mouseleave', () => {
-      const panel = document.querySelector('.feature-panel');
-      if (panel) {
-        panel.classList.remove('visible');
-      }
-    });
 
 
 
     // Initialize sector filter after layers are added
     Promise.all([
-      view.whenLayerView(layer02),
-      // view.whenLayerView(layer03)
+        view.whenLayerView(layer02),
     ]).then(() => {
-      initializeSectorFilter([layer02]);
+        initializeFilters([layer02]); // Pass layer02 in an array
     });
-
 
 
     Promise.all([
@@ -608,29 +845,6 @@ async function initializeHeatMap() {
         }
       );
 
-      // const heatmapRenderer = layer01.renderer.clone();
-      // // The following simple renderer will render all points as simple
-      // // markers at certain scales
-      // const simpleRenderer = {
-      //   type: "simple",
-      //   symbol: {
-      //     type: "picture-marker",  // autocasts as new PictureMarkerSymbol()
-      //     url: "https://daraobeirne.github.io/kisspng-drawing-pin-world-map-logo-push-vector-5ae029f6ddeaf4.198342921524640246909.png",
-      //     width: "30px",
-      //     height: "30px"
-      //   }
-      // };
-
-      // // When the scale is larger than 1:72,224 (zoomed in passed that scale),
-      // // then switch from a heatmap renderer to a simple renderer. When zoomed
-      // // out beyond that scale, switch back to the heatmap renderer
-      // reactiveUtils.watch(
-      //   () => view.scale,
-      //   (scale) => {
-      //     layer01.renderer = scale <= 72224 ? simpleRenderer : heatmapRenderer;
-      //   }
-      // );
-
 
     });
 
@@ -638,8 +852,7 @@ async function initializeHeatMap() {
 
 
 
-    await view.when(() => {
-    });
+    await view.when();
 
 
 
@@ -670,8 +883,8 @@ async function initializeHeatMap() {
 
 // calling
 initializeHeatMap()
-  .then(() => {
-    console.log("Map Returned From Require Scope", displayMap);
+  .then(([view, map]) => {
+    console.log("Map Returned From Require Scope", view, map);
     // You can work with the view object here
   })
   .catch((error) => {
@@ -921,59 +1134,130 @@ function toggleLoading(show) {
   }
 }
 
-function initializeSectorFilter(layers) {
-  const sectorFilter = document.getElementById('sectorFilter');
 
-  sectorFilter.addEventListener('change', async (e) => {
-    const selectedSector = e.target.value;
-    toggleLoading(true);
+function initializeFilters(layers) {
+    const cityFilter = document.getElementById('cityFilter');
+    const hoursFilter = document.getElementById('hoursFilter');
+    const sidePanel = document.getElementById('sidePanel');
 
-    try {
-      // Apply filter to layers
-      layers.forEach(layer => {
-        if (selectedSector === 'all') {
-          layer.definitionExpression = null;
-        } else {
-          layer.definitionExpression = `Sector = '${selectedSector}'`;
+    let currentCityFilter = 'all';
+    let currentHoursFilter = 'all';
+
+    // Get the main layer from the layers array
+    const mainLayer = layers[0]; // Assuming layer02 is the first layer in the array
+
+    async function validateAndApplyFilters() {
+        toggleLoading(true);
+
+        try {
+            let expression = '';
+            
+            // Build the filter expression
+            if (currentCityFilter !== 'all' && currentHoursFilter !== 'all') {
+                expression = `Sector = '${currentCityFilter}' AND Size = '${currentHoursFilter}'`;
+                
+                // Validate the combination
+                const query = mainLayer.createQuery();
+                query.where = expression;
+                const results = await mainLayer.queryFeatures(query);
+                
+                if (results.features.length === 0) {
+                    showCustomAlert('لا توجد مراكز صحية بهذه الساعات في المدينة المختارة');
+                    hoursFilter.value = 'all';
+                    currentHoursFilter = 'all';
+                    expression = `Sector = '${currentCityFilter}'`; // Reset to city filter only
+                }
+            } else if (currentCityFilter !== 'all') {
+                expression = `Sector = '${currentCityFilter}'`;
+            } else if (currentHoursFilter !== 'all') {
+                expression = `Size = '${currentHoursFilter}'`;
+            }
+
+            // Apply filters to layers
+            layers.forEach(layer => {
+                layer.definitionExpression = expression || null;
+            });
+
+            // Query the extent of filtered features
+            const queryParams = {
+                where: expression || '1=1',
+                outSpatialReference: view.spatialReference,
+                returnGeometry: true
+            };
+
+            const results = await Promise.all(
+                layers.map(layer => layer.queryExtent(queryParams))
+            );
+
+            // Combine extents
+            const combinedExtent = results.reduce((acc, result) => {
+                if (!acc) return result.extent;
+                return acc.union(result.extent);
+            }, null);
+
+            if (combinedExtent) {
+                await view.goTo({
+                    target: combinedExtent.expand(1.5),
+                    duration: 1000,
+                    easing: "ease-out"
+                });
+            }
+
+            // Collapse sidebar
+            sidePanel.classList.add('collapsed');
+
+        } catch (error) {
+            console.error('Error applying filters:', error);
+            showCustomAlert('حدث خطأ أثناء تطبيق الفلتر');
+        } finally {
+            toggleLoading(false);
         }
-      });
-
-      // Wait for layer views to update
-      await Promise.all(layers.map(async (layer) => {
-        const layerView = await view.whenLayerView(layer);
-        await layerView.when();
-      }));
-
-      // Query the features to get the extent
-      const queryParams = {
-        where: selectedSector === 'all' ? '1=1' : `Sector = '${selectedSector}'`,
-        outSpatialReference: view.spatialReference,
-        returnGeometry: true
-      };
-
-      const results = await Promise.all(
-        layers.map(layer => layer.queryExtent(queryParams))
-      );
-
-      // Combine extents from all layers
-      const combinedExtent = results.reduce((acc, result) => {
-        if (!acc) return result.extent;
-        return acc.union(result.extent);
-      }, null);
-
-      if (combinedExtent) {
-        await view.goTo({
-          target: combinedExtent.expand(1.5),
-          duration: 1000,
-          easing: "ease-out"
-        });
-      }
-    } catch (error) {
-      console.error('Error in sector filter:', error);
-    } finally {
-      toggleLoading(false);
     }
-  });
+
+    // City filter change event
+    cityFilter.addEventListener('change', (e) => {
+        currentCityFilter = e.target.value;
+        hoursFilter.disabled = currentCityFilter === 'all';
+        hoursFilter.value = 'all';
+        currentHoursFilter = 'all';
+        validateAndApplyFilters();
+    });
+
+    // Hours filter change event
+    hoursFilter.addEventListener('change', (e) => {
+        currentHoursFilter = e.target.value;
+        validateAndApplyFilters();
+    });
+}
+
+// Add this function for the custom alert
+function showCustomAlert(message) {
+    // Remove existing alert if any
+    const existingAlert = document.querySelector('.custom-alert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+
+    // Create new alert
+    const alert = document.createElement('div');
+    alert.className = 'custom-alert';
+    alert.innerHTML = `
+        <i class="fas fa-exclamation-circle"></i>
+        <span>${message}</span>
+    `;
+    document.body.appendChild(alert);
+
+    // Show animation
+    setTimeout(() => {
+        alert.classList.add('show');
+        alert.classList.add('shake');
+    }, 100);
+
+    // Remove alert after 3 seconds
+    setTimeout(() => {
+        alert.classList.remove('show');
+        setTimeout(() => alert.remove(), 400);
+    }, 3000);
 }
 
 // Helper function to get filtered features extent
