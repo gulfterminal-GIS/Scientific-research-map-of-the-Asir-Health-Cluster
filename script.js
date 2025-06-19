@@ -492,10 +492,6 @@ if (!document.getElementById('feature-panel-styles')) {
     document.head.appendChild(styleSheet);
 }
 
-
-
-
-
 function getWorkingHours(size) {
     const hoursMap = {
         "4": "٨ص - ١١:٥٩م الأحد - الخميس",
@@ -756,6 +752,11 @@ function getWorkingHours(size) {
 
 
 
+
+
+
+
+
     const layer02 = new CSVLayer({
       url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/Health%20Cluster%20in%20Asir02.csv",
       copyright: "Health Cluster in Asir",
@@ -811,6 +812,53 @@ function getWorkingHours(size) {
 
 
 
+    const hospitals = new CSVLayer({
+        url: "https://raw.githubusercontent.com/gulfterminal-GIS/Scientific-research-map-of-the-Asir-Health-Cluster/refs/heads/main/All%20Hospitals%20Aseer%20Cluster%20-%20All%20.csv",
+        copyright: "Hospitals in Asir",
+        title: "المستشفيات",
+        // popupTemplate: {
+        //   title: "{facility_name}",
+        //   content: [
+        //     {
+        //       type: "fields",
+        //       fieldInfos: [
+        //         {
+        //           fieldName: "facility_type",
+        //           label: "نوع المنشأة",
+        //         },
+        //         {
+        //           fieldName: "Sector",
+        //           label: "المدينة",
+        //         },
+        //         {
+        //           fieldName: "working hours",
+        //           label: "ساعات العمل",
+        //         },
+        //         {
+        //           fieldName: "Location",
+        //           label: "موقع المنشأة",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "web-style",  // autocasts as new WebStyleSymbol()
+            // name: "hospital",
+            // styleName: "Esri2DPointSymbolsStyle",
+            name: "Hospital",
+            styleUrl: "https://cdn.arcgis.com/sharing/rest/content/items/6eeef46c653b40c9bda04f9bed913b70/data"
+          }
+        },
+        labelsVisible: true,
+        // featureReduction: clusterConfig,
+        // visible: false,
+        // renderer: sizeRenderer
+    });
+    map.add(hospitals);  // adds the layer to the map
+
 
     // Initialize sector filter after layers are added
     Promise.all([
@@ -823,14 +871,14 @@ function getWorkingHours(size) {
     Promise.all([
       // view.whenLayerView(layer01),
       view.whenLayerView(layer02),
-      // view.whenLayerView(layer03),
+      view.whenLayerView(hospitals),
       // view.whenLayerView(fLayer2)
-    ]).then(([layerView2]) => {
+    ]).then(([layerView2, hospitalsLayerView]) => {
       return Promise.all(
         [
           // reactiveUtils.whenOnce(() => !layerView1.updating),
           reactiveUtils.whenOnce(() => !layerView2.updating),
-          // reactiveUtils.whenOnce(() => !layerView3.updating),
+          reactiveUtils.whenOnce(() => !hospitalsLayerView.updating),
           // reactiveUtils.whenOnce(() => !layerView2.updating)
         ]
       );

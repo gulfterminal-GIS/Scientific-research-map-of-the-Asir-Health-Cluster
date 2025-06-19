@@ -123,6 +123,9 @@ html, body {
 
 
 /* Update legend styles */
+/* .esri-legend__service {
+    border: none;
+} */
 .esri-legend {
     height: auto !important;
 }
@@ -163,6 +166,7 @@ html, body {
 .esri-legend__layer-caption {
     padding: 0 !important;
     margin: 0 !important;
+    font-size: 13px;
 }
 
 
@@ -175,7 +179,7 @@ html, body {
     /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .card:last-child {
@@ -188,16 +192,49 @@ html, body {
     padding: 10px;
 }
 
+.esri-legend__layer-table {
+    margin-bottom: 0;
+}
+
+
 /* Make legend title more compact */
 .esri-legend__service-label {
     padding: 0 !important;
-    margin-bottom: 5px !important;
-    font-size: 1.15em !important;
+    margin-bottom: 5px;
+    font-size: 1em;
 }
 
 .esri-legend__layer-cell--info {
-    font-size: 14px;
+    font-size: 13px;
 }
+
+.esri-legend__service:first-child h3 {
+    margin-bottom: 0px;
+}
+
+.esri-legend__service:first-child .esri-legend__layer-body {
+    padding: 0px;
+}
+
+.esri-legend__service:last-child .esri-legend__layer-body {
+    padding: 0px;
+    padding-top: 2px;
+}
+
+.esri-legend__service:last-child {
+    margin-top: 10px;
+}
+
+.esri-legend__symbol img {
+    width: 19px;
+    height: 19px;
+}
+
+/* .esri-legend__service:last-child h3{
+    font-size: 14px;
+} */
+
+
 .card {
     border: none;
     border-radius: 10px;
@@ -384,7 +421,7 @@ html, body {
 @media screen and (max-width: 768px) {
     #sidePanel {
         width: 300px; /* Slightly smaller on mobile */
-        height: 510px; /* Slightly smaller height on mobile */
+        height: 537px; /* Slightly smaller height on mobile */
     }
 
     #sidePanel.collapsed {
