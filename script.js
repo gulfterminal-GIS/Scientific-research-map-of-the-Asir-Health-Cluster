@@ -552,7 +552,7 @@ const combinedStyles = `
 /* Mobile specific styles */
 @media screen and (max-width: 768px) {
     #feature-container {
-        height: 40vh; /* Slightly taller on mobile */
+        height: 36vh; /* Slightly taller on mobile */
     }
 
     .feature-card-body {
