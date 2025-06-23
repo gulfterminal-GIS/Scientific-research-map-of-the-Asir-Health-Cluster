@@ -421,7 +421,7 @@ html, body {
 @media screen and (max-width: 768px) {
     #sidePanel {
         width: 300px; /* Slightly smaller on mobile */
-        height: 537px; /* Slightly smaller height on mobile */
+        height: 578px; /* Slightly smaller height on mobile */
     }
 
     #sidePanel.collapsed {
