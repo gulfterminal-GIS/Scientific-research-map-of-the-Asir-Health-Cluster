@@ -35,7 +35,8 @@ async function initializeHeatMap() {
     esriConfig.apiKey = "AAPK756f006de03e44d28710cb446c8dedb4rkQyhmzX6upFiYPzQT0HNQNMJ5qPyO1TnPDSPXT4EAM_DlQSj20ShRD7vyKa7a1H";
 
     map = new Map({
-      basemap: "gray-vector",
+      // basemap: "gray-vector",
+      basemap: "hybrid",
       // layers: [layer01]
     });
 

@@ -18,7 +18,7 @@ html, body {
 
 #sidePanel {
     position: absolute;
-    top: 50%; /* Position from the middle */
+    top: 58%; /* Position from the middle */
     left: 20px;
     transform: translateY(-50%); /* Center vertically */
     height: auto; /* Change to auto to fit content */
@@ -255,7 +255,7 @@ html, body {
 /* Update these CSS rules */
 .sidebar-header {
     padding: 10px 15px; /* Reduce padding */
-    background: linear-gradient(45deg, rgba(33, 150, 243, 0.9), rgba(25, 118, 210, 0.9));
+    background: linear-gradient(45deg, rgba(86, 165, 222, 255), rgba(70, 147, 203, 255));
     color: white;
     border-radius: 10px 10px 0 0;
     text-align: center;
@@ -312,7 +312,7 @@ html, body {
 
 
 .card-header {
-    background: linear-gradient(45deg, rgba(33, 150, 243, 0.95), rgba(25, 118, 210, 0.95));
+    background: linear-gradient(45deg, rgba(86, 165, 222, 255), rgba(70, 147, 203, 255));
     color: white;
     border-radius: 10px 10px 0 0 !important;
     padding: 1rem;
@@ -420,7 +420,7 @@ html, body {
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
     #sidePanel {
-        width: 300px; /* Slightly smaller on mobile */
+        width: 290px; /* Slightly smaller on mobile */
         height: 578px; /* Slightly smaller height on mobile */
     }
 
@@ -439,4 +439,121 @@ html, body {
     .card-body {
         padding: 0.5rem;
     }
+}
+
+
+.map-header {
+    position: absolute;
+    top: 20px;  /* Changed from 0 to add some spacing from the top */
+    left: 50%;  /* Center horizontally */
+    transform: translateX(-50%);  /* Center horizontally */
+    width: 90%;  /* Take 90% of the width */
+    max-width: 1200px;  /* Maximum width */
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);  /* Slightly transparent background */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);  /* Enhanced shadow */
+    z-index: 100;
+    padding: 0 20px;
+    border-radius: 10px;  /* Rounded corners */
+    backdrop-filter: blur(5px);  /* Optional: adds blur effect behind */
+}
+
+.header-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+}
+
+/* Remove max-width from header-content since we're handling it in map-header */
+.header-content {
+    margin: 0;
+    height: 100%;
+}
+
+/* Remove the padding-top from viewDiv since we're overlaying the header */
+#viewDiv {
+    padding-top: 0 !important;
+}
+
+/* Rest of your styles remain the same */
+.header-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #56a5de;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Update mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .map-header {
+        top: 10px;  /* Less spacing on mobile */
+        width: 95%;  /* Take more width on mobile */
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .header-title {
+        font-size: 1.1em;
+    }
+
+    .header-logo img {
+        height: 70px;
+        padding: 5px;
+    }
+}
+
+.title-icon {
+    color: #56a5de;
+    font-size: 1.2em;
+    animation: slideIcon 2s infinite ease-in-out;
+}
+
+@keyframes slideIcon {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Optional: Add hover effect */
+.map-header:hover {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) translateY(2px);
+    transition: all 0.3s ease;
+}
+
+
+.icon-group {
+    display: flex;
+    gap: 2px;
+}
+
+.icon-1 { animation-delay: 0s; }
+.icon-2 { animation-delay: 0.2s; }
+.icon-3 { animation-delay: 0.4s; }
+
+
+.esri-ui-top-right {
+    top: 75px;
 }
