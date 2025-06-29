@@ -1080,7 +1080,8 @@ async function addWidgets() {
       Search,
       Home,
       LayerList,
-      Legend
+      Legend,
+      Locate
     ] = await Promise.all([
       loadModule("esri/widgets/Fullscreen"),
       loadModule("esri/widgets/BasemapGallery"),
@@ -1091,6 +1092,7 @@ async function addWidgets() {
       loadModule("esri/widgets/Home"),
       loadModule("esri/widgets/LayerList"),
       loadModule("esri/widgets/Legend"),
+      loadModule("esri/widgets/Locate"),
     ]);
 
     var basemapGallery = new BasemapGallery({
@@ -1120,6 +1122,12 @@ async function addWidgets() {
       unit: "metric",
     });
     view.ui.add(scalebar, "bottom-right");
+
+    // typical usage
+    let locate = new Locate({
+      view: view
+    });
+    view.ui.add(locate, "top-right");
 
     var search = new Search({
       //Add Search widget

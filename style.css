@@ -420,8 +420,8 @@ html, body {
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
     #sidePanel {
-        width: 290px; /* Slightly smaller on mobile */
-        height: 578px; /* Slightly smaller height on mobile */
+        width: 285px; /* Slightly smaller on mobile */
+        height: 557px; /* Slightly smaller height on mobile */
     }
 
     #sidePanel.collapsed {
