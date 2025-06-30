@@ -488,13 +488,26 @@ html, body {
 }
 
 .header-logo {
-    height: 80px;
+    /* height: 80px; */
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 5px;
 }
 
 .header-logo img {
     height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 0.8em;
+    color: #56a5de;
+    font-weight: 500;
+}
+
+.title-icon-img {
+    height: 30px;
     width: auto;
 }
 
@@ -508,12 +521,22 @@ html, body {
     }
 
     .header-title {
-        font-size: 1.1em;
+        font-size: 0.9em;
+        font-weight: bolder;
+    }
+
+    .title-icon-img {
+        height: 25px;
+        margin-right: -10px;
     }
 
     .header-logo img {
-        height: 70px;
+        height: 60px;
         padding: 5px;
+    }
+    .logo-text {
+        font-size: 0.6em;
+        margin-top: -12px;
     }
 }
 
@@ -556,4 +579,27 @@ html, body {
 
 .esri-ui-top-right {
     top: 75px;
+}
+
+/* Optional hover effects */
+.title-icon-img:hover, 
+.header-logo-img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.check-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
