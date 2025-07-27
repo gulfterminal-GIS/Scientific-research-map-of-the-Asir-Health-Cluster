@@ -31,18 +31,9 @@
       <i class="material-icons-round toggle-icon">chevron_left</i>
     </div>
     <div id="widgetContainer">
-      <!-- <div class="card mb-3">
-        <div class="card-header bg-primary text-white d-flex align-items-center">
-          <span class="material-icons-round me-2">search</span>
-          <span>البحث</span>
-        </div>
-        <div class="card-body">
-          <div id="searchDiv"></div>
-        </div>
-      </div> -->
 
       <!-- Add this new section above the layerList div -->
-      <div class="card mb-3">
+      <div class="card mb-2">
           <div class="card-header bg-primary text-white d-flex align-items-center">
               <span class="material-icons-round me-2">filter_alt</span>
               <span>البحـــــــــــــــــــــــث</span>
@@ -86,7 +77,7 @@
               </select>
           </div>
           <div class="card-body">
-              <select id="hoursFilter" class="form-select" disabled>
+              <select id="hoursFilter" class="form-select">
                   <option value="all">اختر ساعات العمل</option>
                   <option value="8">8 ساعات | الاحد - الخميس</option>
                   <option value="40">16 ساعة | جميع أيام الأسبوع</option>
@@ -94,18 +85,16 @@
                   <option value="24">24 ساعة | جميع أيام الأسبوع</option>
               </select>
           </div>
+
+          <div class="card-body">
+              <button id="resetFiltersBtn" class="btn btn-secondary w-100">
+                  <i class="material-icons-round">refresh</i>
+                  إعادة تعيين الفلاتر
+              </button>
+          </div>
+
       </div>
 
-
-      <!-- <div class="card mb-3">
-        <div class="card-header bg-primary text-white d-flex align-items-center">
-          <span class="material-icons-round me-2">layers</span>
-          <span>الطبقات</span>
-        </div>
-        <div class="card-body">
-          <div id="layerListDiv"></div>
-        </div>
-      </div> -->
       <div class="card">
         <div class="card-header bg-primary text-white d-flex align-items-center">
           <span class="material-icons-round me-2">legend_toggle</span>

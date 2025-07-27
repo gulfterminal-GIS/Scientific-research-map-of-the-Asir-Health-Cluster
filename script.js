@@ -184,43 +184,6 @@ function updateHospitalDisplay(feature, container, highlight) {
     });
 }
 
-// Add layer type filter handling
-// Update the initializeLayerTypeFilter function to receive the layers
-function initializeLayerTypeFilter(phcLayer, hospitalsLayer) {
-    const layerTypeFilter = document.getElementById('layerTypeFilter');
-    const cityFilter = document.getElementById('cityFilter');
-    const hoursFilter = document.getElementById('hoursFilter');
-    const sidePanel = document.getElementById('sidePanel');
-
-    layerTypeFilter.addEventListener('change', (e) => {
-        const selectedType = e.target.value;
-        
-        if (selectedType === 'all') {
-            // Show all layers
-            phcLayer.visible = true;
-            hospitalsLayer.visible = true;
-            cityFilter.disabled = true;
-            hoursFilter.disabled = true;
-        } else {
-            // Show selected layer
-            phcLayer.visible = selectedType === 'phc';
-            hospitalsLayer.visible = selectedType === 'hospitals';
-            
-            // Enable city filter only
-            cityFilter.disabled = false;
-            hoursFilter.disabled = true;
-        }
-        
-        // Reset filters
-        cityFilter.value = 'all';
-        hoursFilter.value = 'all';
-        
-        // Collapse sidebar
-        sidePanel.classList.add('collapsed');
-    });
-}
-
-
 // Add touch handling for mobile (optional)
 function addTouchHandling(container) {
     let startY;
@@ -680,7 +643,7 @@ function getWorkingHours(size) {
     const hours24 = {
       type: "simple-marker",
       size: 7,
-      color: [150, 100, 100],
+      color: [0, 128, 0],
       outline: null
       // outline: {
       //   width: 2,
@@ -991,6 +954,12 @@ function getWorkingHours(size) {
     ]).then(([layer02View, hospitalsView]) => {
         // Initialize both filters with access to both layers
         initializeFilters([layer02, hospitals]); 
+
+        // Add this after the initializeFilters function is called
+        document.getElementById('resetFiltersBtn')?.addEventListener('click', () => {
+            window.resetFilters();
+        });
+
         // initializeLayerTypeFilter(layer02, hospitals); // Pass both layers to the function
     });
 
@@ -1323,141 +1292,106 @@ function initializeFilters(layers) {
     const hoursFilter = document.getElementById('hoursFilter');
     const sidePanel = document.getElementById('sidePanel');
 
-    let currentCityFilter = 'all';
-    let currentHoursFilter = 'all';
-    
     const phcLayer = layers[0];
     const hospitalLayer = layers[1];
 
-    // Initially enable city filter, disable hours filter
+    // Store current filter values
+    let currentLayerType = 'all';
+    let currentCity = 'all';
+    let currentHours = 'all';
+
+    // Remove all disabled states - all filters are always active
+    layerTypeFilter.disabled = false;
     cityFilter.disabled = false;
-    hoursFilter.disabled = true;
+    hoursFilter.disabled = false;
 
-    // Layer type filter change handler
-    layerTypeFilter.addEventListener('change', (e) => {
-        const selectedType = e.target.value;
-        
-        // Always show both layers when "all" is selected
-        if (selectedType === 'all') {
-            phcLayer.visible = true;
-            hospitalLayer.visible = true;
-            hoursFilter.disabled = true;
-        } else if (selectedType === 'hospitals') {
-            phcLayer.visible = false;
-            hospitalLayer.visible = true;
-            hoursFilter.disabled = true;
-        } else { // PHC centers
-            phcLayer.visible = true;
-            hospitalLayer.visible = false;
-            // Enable hours filter only if a city is selected
-            hoursFilter.disabled = currentCityFilter === 'all';
-        }
-        
-        // Reset filters
-        hoursFilter.value = 'all';
-        currentHoursFilter = 'all';
-        
-        // Apply current city filter if any
-        if (currentCityFilter !== 'all') {
-            validateAndApplyFilters();
-        }
-        
-        // Collapse sidebar
-        sidePanel.classList.add('collapsed');
+    // Layer type filter
+    layerTypeFilter.addEventListener('change', async (e) => {
+        currentLayerType = e.target.value;
+        await applyAllFilters();
     });
 
-    // City filter change handler
+    // City filter
     cityFilter.addEventListener('change', async (e) => {
-        currentCityFilter = e.target.value;
-        const selectedType = layerTypeFilter.value;
-        
-        if (currentCityFilter === 'all') {
-            hoursFilter.disabled = true;
-            hoursFilter.value = 'all';
-            currentHoursFilter = 'all';
-        } else {
-            // Enable hours filter only for PHC centers
-            hoursFilter.disabled = selectedType !== 'phc';
-        }
-        
-        await validateAndApplyFilters();
+        currentCity = e.target.value;
+        await applyAllFilters();
     });
 
-    // Hours filter change handler
+    // Hours filter
     hoursFilter.addEventListener('change', async (e) => {
-        currentHoursFilter = e.target.value;
-        await validateAndApplyFilters();
+        currentHours = e.target.value;
+        await applyAllFilters();
     });
 
-    async function validateAndApplyFilters() {
+    async function applyAllFilters() {
         toggleLoading(true);
 
         try {
-            const selectedType = layerTypeFilter.value;
-            let phcExpression = '';
-            let hospitalExpression = '';
-            
-            // Handle city filter for both layers
-            if (currentCityFilter !== 'all') {
-                phcExpression = `Sector = '${currentCityFilter}'`;
-                hospitalExpression = `المدينة = '${currentCityFilter}'`;
-                
-                // Add hours filter for PHC centers if selected
-                if (selectedType === 'phc' && currentHoursFilter !== 'all') {
-                    const fullExpression = `${phcExpression} AND Size = '${currentHoursFilter}'`;
-                    
-                    // Validate the combination
-                    const query = phcLayer.createQuery();
-                    query.where = fullExpression;
-                    const results = await phcLayer.queryFeatures(query);
-                    
-                    if (results.features.length === 0) {
-                        showCustomAlert('لا توجد مراكز صحية بهذه الساعات في المدينة المختارة');
-                        hoursFilter.value = 'all';
-                        currentHoursFilter = 'all';
-                    } else {
-                        phcExpression = fullExpression;
-                    }
+            // Build expressions for PHC layer
+            let phcExpressions = [];
+            if (currentCity !== 'all') {
+                phcExpressions.push(`Sector = '${currentCity}'`);
+            }
+            if (currentHours !== 'all') {
+                phcExpressions.push(`Size = '${currentHours}'`);
+            }
+            const phcExpression = phcExpressions.length > 0 ? 
+                phcExpressions.join(' AND ') : '1=1';
+
+            // Build expression for Hospital layer
+            const hospitalExpression = currentCity !== 'all' ? 
+                `المدينة = '${currentCity}'` : '1=1';
+
+            // Handle layer visibility based on layer type filter
+            if (currentLayerType === 'all') {
+                // Show both layers with their respective filters
+                phcLayer.visible = true;
+                hospitalLayer.visible = true;
+                phcLayer.definitionExpression = phcExpression;
+                hospitalLayer.definitionExpression = hospitalExpression;
+            } else if (currentLayerType === 'phc') {
+                // Show only PHC layer
+                phcLayer.visible = true;
+                hospitalLayer.visible = false;
+                phcLayer.definitionExpression = phcExpression;
+            } else if (currentLayerType === 'hospitals') {
+                // Show only Hospital layer
+                phcLayer.visible = false;
+                hospitalLayer.visible = true;
+                hospitalLayer.definitionExpression = hospitalExpression;
+            }
+
+            // Check if any features match the criteria
+            let hasResults = false;
+            const visibleLayers = [];
+
+            if (phcLayer.visible) {
+                const phcQuery = phcLayer.createQuery();
+                phcQuery.where = phcLayer.definitionExpression;
+                const phcResults = await phcLayer.queryFeatures(phcQuery);
+                if (phcResults.features.length > 0) {
+                    hasResults = true;
+                    visibleLayers.push({ layer: phcLayer, expression: phcLayer.definitionExpression });
                 }
             }
 
-            // Apply filters based on selected type
-            if (selectedType === 'all') {
-                phcLayer.definitionExpression = phcExpression;
-                hospitalLayer.definitionExpression = hospitalExpression;
-            } else if (selectedType === 'hospitals') {
-                hospitalLayer.definitionExpression = hospitalExpression;
+            if (hospitalLayer.visible) {
+                const hospitalQuery = hospitalLayer.createQuery();
+                hospitalQuery.where = hospitalLayer.definitionExpression;
+                const hospitalResults = await hospitalLayer.queryFeatures(hospitalQuery);
+                if (hospitalResults.features.length > 0) {
+                    hasResults = true;
+                    visibleLayers.push({ layer: hospitalLayer, expression: hospitalLayer.definitionExpression });
+                }
+            }
+
+            // Show alert if no results
+            if (!hasResults) {
+                showCustomAlert('لا توجد نتائج للبحث المحدد');
+                // Don't reset filters - let user modify them
             } else {
-                phcLayer.definitionExpression = phcExpression;
-            }
-
-            // Calculate extent for visible layers
-            const extents = [];
-            if (phcLayer.visible && phcLayer.definitionExpression) {
-                const phcExtent = await phcLayer.queryExtent({
-                    where: phcLayer.definitionExpression,
-                    outSpatialReference: view.spatialReference
-                });
-                if (phcExtent) extents.push(phcExtent.extent);
-            }
-            if (hospitalLayer.visible && hospitalLayer.definitionExpression) {
-                const hospitalExtent = await hospitalLayer.queryExtent({
-                    where: hospitalLayer.definitionExpression,
-                    outSpatialReference: view.spatialReference
-                });
-                if (hospitalExtent) extents.push(hospitalExtent.extent);
-            }
-
-            // Zoom to combined extent
-            if (extents.length > 0) {
-                const combinedExtent = extents.reduce((acc, extent) => 
-                    acc ? acc.union(extent) : extent
-                );
-                await view.goTo({
-                    target: combinedExtent.expand(1.5),
-                    duration: 1000,
-                    easing: "ease-out"
-                });
+                // Zoom to results
+                await zoomToFilteredFeatures(visibleLayers);
             }
 
             // Collapse sidebar
@@ -1470,7 +1404,52 @@ function initializeFilters(layers) {
             toggleLoading(false);
         }
     }
+
+    async function zoomToFilteredFeatures(visibleLayers) {
+        const extents = [];
+
+        for (const { layer, expression } of visibleLayers) {
+            try {
+                const extent = await layer.queryExtent({
+                    where: expression,
+                    outSpatialReference: view.spatialReference
+                });
+                if (extent && extent.extent) {
+                    extents.push(extent.extent);
+                }
+            } catch (error) {
+                console.error('Error querying extent:', error);
+            }
+        }
+
+        if (extents.length > 0) {
+            const combinedExtent = extents.reduce((acc, extent) => 
+                acc ? acc.union(extent) : extent
+            );
+            
+            await view.goTo({
+                target: combinedExtent.expand(1.5),
+                duration: 1000,
+                easing: "ease-out"
+            });
+        }
+    }
+
+    // Add reset filters button functionality (optional)
+    function resetAllFilters() {
+        layerTypeFilter.value = 'all';
+        cityFilter.value = 'all';
+        hoursFilter.value = 'all';
+        currentLayerType = 'all';
+        currentCity = 'all';
+        currentHours = 'all';
+        applyAllFilters();
+    }
+
+    // You can expose this function if you want to add a reset button
+    window.resetFilters = resetAllFilters;
 }
+
 
 // Add this function for the custom alert
 function showCustomAlert(message) {
